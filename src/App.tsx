@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { Home } from './pages/Home/Home';
+import { Neon } from './pages/Neon/Neon';
+import { Pager } from './pages/Pager/Pager';
+import { StarWars } from './pages/StarWars/StarWars';
+import { Joe } from './pages/Joe/Joe';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/neon">
+            <Neon />
+          </Route>
+          <Route exact path="/joe">
+            <Joe />
+          </Route>
+          <Route exact path="/pager">
+            <Pager />
+          </Route>
+          <Route exact path="/starwars">
+            <StarWars />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
