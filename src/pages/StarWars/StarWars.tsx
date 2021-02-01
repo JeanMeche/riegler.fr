@@ -1,6 +1,7 @@
+import React from "react"
 import styles from './StarWars.module.scss'
 
-export const StarWars = () => {
+const StarWars = () => {
     return (
         <div className={styles.starwars}>
             <div style={{ overflow: 'hidden', position: 'absolute', left: 0, top: 0, width: '50px', height: '25px' }}>
@@ -16,13 +17,12 @@ export const StarWars = () => {
 
             <p className={styles.start}>A short time ago in a browser very, very close&hellip;</p>
 
-            <h1>STAR WARS<sub>titles in CSS3</sub></h1>
+            <h1 className={styles.title}>STAR WARS<sub>titles in CSS3</sub></h1>
 
             <div className={styles.titles}>
                 <div className={styles.titlecontent}>
 
-                    <p className="center">EPISODE IV<br />
-      A NEW HOPE FOR CSS3</p>
+                    <p className="center">EPISODE IV<br />      A NEW HOPE FOR CSS3</p>
 
                     <p>It is a period of vendor war.</p>
 
@@ -49,10 +49,11 @@ export const StarWars = () => {
                     <p>You're welcome to use this demonstration code in your own sites. Please link back to the original article at:</p>
 
                     <p className="center"><a href="http://www.sitepoint.com/css3-starwars-scrolling-text/">sitepoint.com/<br />css3-starwars-scrolling-text/</a></p>
-
+                    <iframe title="iframe" style={{visibility:'hidden'}} width="560" height="315" src="https://www.youtube.com/embed/1KAOq7XX2OY" frameBorder="0" allowFullScreen></iframe>
                 </div>
             </div>
-            <iframe title="test" style={{ visibility: 'hidden' }} width="560" height="315" src="https://www.youtube.com/embed/1KAOq7XX2OY" frameBorder="0" allowFullScreen></iframe>
         </div>
     )
 }
+
+export default StarWars;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
-import { Home } from './pages/Home/Home';
-import { Neon } from './pages/Neon/Neon';
-import { Pager } from './pages/Pager/Pager';
-import { StarWars } from './pages/StarWars/StarWars';
-import { Joe } from './pages/Joe/Joe';
+import Home from './pages/Home/Home';
+import Neon from './pages/Neon/Neon';
+import Pager from './pages/Pager/Pager';
+import StarWars from './pages/StarWars/StarWars';
+import Joe from './pages/Joe/Joe';
+import TodayYou from './pages/TodayYou/TodayYou';
 import './App.css';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/starwars">
             <StarWars />
+          </Route>
+          <Route exact path="/todayyou">
+            <TodayYou/>
           </Route>
         </Switch>
       </Router>

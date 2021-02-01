@@ -157,14 +157,14 @@ const SliderCmp: React.FunctionComponent<SliderProps> = (props) => {
     const handleTouchEnd = (event: React.TouchEvent<HTMLUListElement>) => {
         const currentOffset = new WebKitCSSMatrix(window.getComputedStyle(sliderWrapperRef.current!).transform).e;
         const sliderWidth = sliderWrapperRef.current!.getBoundingClientRect().width;
-        const direction =  startOffsetX.current - currentOffset;
+        const direction = startOffsetX.current - currentOffset;
 
-        const currentSlideDecimal =(-currentOffset / sliderWidth * props.slides.length) % 1;
+        const currentSlideDecimal = (-currentOffset / sliderWidth * props.slides.length) % 1;
         let currentSlide: number;
-        if(direction > 0) {
-            currentSlide = currentSlideDecimal > 0.3 ? Math.ceil(-currentOffset / sliderWidth * props.slides.length) : current ;
+        if (direction > 0) {
+            currentSlide = currentSlideDecimal > 0.3 ? Math.ceil(-currentOffset / sliderWidth * props.slides.length) : current;
         } else {
-            currentSlide = currentSlideDecimal < 0.7 ? Math.floor(-currentOffset / sliderWidth * props.slides.length) : current ;
+            currentSlide = currentSlideDecimal < 0.7 ? Math.floor(-currentOffset / sliderWidth * props.slides.length) : current;
         }
         currentSlide = Math.min(Math.max(currentSlide, 0), props.slides.length - 1);  // waiting for Math.clamp 🤞
         if (currentSlide !== current) {
@@ -213,6 +213,8 @@ const SliderCmp: React.FunctionComponent<SliderProps> = (props) => {
     )
 }
 
-export const Slider = () => {
+const Slider = () => {
     return <div className="slider-base"><SliderCmp heading="Example Slider" slides={slideData} /></div>
 }
+
+export default Slider;

@@ -1,0 +1,16 @@
+html, body, #root, .App, #___gatsby {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+div[tabindex] {
+  height: 100%;
+}
+
+.noselect {
+  user-select: none;
+}

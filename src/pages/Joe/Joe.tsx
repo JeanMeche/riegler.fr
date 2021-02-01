@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import styles from './Joe.module.scss';
+import React from 'react';
 
-export const Joe = () => {
+const Joe = () => {
     useEffect(() => {
         document.title = "Joe l'Ane"
      }, []);
@@ -21,3 +22,5 @@ export const Joe = () => {
         </div >
     )
 }
+
+export default Joe;

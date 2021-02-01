@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styles from './Neon.module.scss';
 
-export const Neon: FunctionComponent = () => {
+const Neon: FunctionComponent = () => {
     return (
         <div className={styles.tiles}>
             <div className={styles.sign}>
@@ -18,3 +18,5 @@ export const Neon: FunctionComponent = () => {
         </div >
     );
 }  
+
+export default Neon;

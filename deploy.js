@@ -5,12 +5,12 @@ var config = {
     user: "riegler",
     host: "ftp.cluster015.hosting.ovh.net",
     port: 21,
-    localRoot: __dirname + "/build",
+    localRoot: __dirname + "/public",
     remoteRoot: "/app/",
     // include: ["*", "**/*"],      // this would upload everything except dot files
     include: ["*", "**/*"],
     // e.g. exclude sourcemaps, and ALL files in node_modules (including dot files)
-    exclude: ["dist/**/*.map", "node_modules/**", "node_modules/**/.*", ".git/**"],
+    exclude: ["**/*.map", "node_modules/**", "node_modules/**/.*", ".git/**"],
     // delete ALL existing files at destination before uploading, if true
     deleteRemote: false,
     // Passive mode is forced (EPSV command is not sent)

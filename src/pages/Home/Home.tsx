@@ -1,8 +1,7 @@
-import React, { FunctionComponent } from 'react';
-import { DownArrow, UpArrow, LeftArrow, RightArrow } from '../../components/icons/Arrows';
+import React from 'react';
 import './Home.scss'
 
-export const Home: FunctionComponent = () => {
+const Home = () => {
     return (
         <div className="animated-title">
             <div className="text-top">
@@ -17,3 +16,5 @@ export const Home: FunctionComponent = () => {
         </div>
     );
 }  
+
+export default Home;
