@@ -28,5 +28,6 @@ yarn-error.log*
 .cache/
 public
 
-# Mac files
-.DS_Store
+# next.js
+/.next/
+/out/

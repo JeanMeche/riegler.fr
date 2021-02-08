@@ -1,7 +1,0 @@
-html, body, #root, .App {
-  height: 100%;
-}
-
-.noselect {
-  user-select: none;
-}
