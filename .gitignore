@@ -24,10 +24,6 @@ yarn-error.log*
 
 .eslintcache
 
-# gatsby files
-.cache/
-public
-
 # next.js
 /.next/
 /out/

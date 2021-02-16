@@ -6,7 +6,6 @@ export default function DynamicPage(): JSX.Element {
   const {
     query: { s },
   } = router;
-  console.log(router);
   return (
     <AnimatedStroke string={s as string} /> 
   ); 

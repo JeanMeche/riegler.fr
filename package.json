@@ -10,7 +10,15 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.7",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.17.0",
+    "gray-matter": "^4.0.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
     "next": "10.0.6",
+    "next-compose-plugins": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -18,18 +26,23 @@
     "react-spring": "9.0.0-rc.3",
     "react-typed": "^1.2.0",
     "react-use-gesture": "^8.0.0",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1",
+    "responsive-loader": "^2.3.0",
     "sass": "^1.32.5",
+    "sharp": "^0.27.1",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "deploy": "node deploy",
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "npm run clean && next build && next export",
     "start": "next start",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "clean": "npx rimraf .next build out"
+    "clean": "npx rimraf .next build out",
+    "serve-build": "npx http-server out"
   },
   "browserslist": {
     "production": [
@@ -44,13 +57,17 @@
     ]
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.11",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
+    "autoprefixer": "^10.2.1",
     "eslint": "^7.19.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "ftp-deploy": "^2.4.0"
+    "ftp-deploy": "^2.4.0",
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.0.3"
   }
 }
