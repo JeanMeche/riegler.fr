@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import styles from './StarWars.module.scss';
+import styles from './StarWars.module.css';
 
 const StarWars: FunctionComponent = () => (
   <div className={styles.starwars}>

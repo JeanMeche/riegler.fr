@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import styles from './TodayYou.module.scss';
+import styles from './TodayYou.module.css';
 
 const TodayYou:FunctionComponent = () => (
   <div className={styles.body}>

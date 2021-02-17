@@ -1,5 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
-@import url(//fonts.googleapis.com/icon?family=Material+Icons);
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
 $font:'Source Sans Pro',
 sans-serif;
@@ -17,7 +17,7 @@ $blue:#1e76e3;
     background: $blue;
     -webkit-font-smoothing: antialiased;
 
-    * {
+    & * {
         box-sizing: border-box;
     }
 }
@@ -37,7 +37,7 @@ $blue:#1e76e3;
     background-color: #FFF;
     box-shadow: 0 19px 48px rgba(0, 0, 0, 0.30), 0 15px 32px rgba(0, 0, 0, 0.22);
 
-    .header {
+    & .header {
         height: 250px;
         width: 100%;
         background-color: $secondary;
@@ -51,7 +51,7 @@ $blue:#1e76e3;
             height: 0px;
         }
 
-        .title {
+        & .title {
             height: 200px;
             display: flex;
             align-items: center;
@@ -59,18 +59,18 @@ $blue:#1e76e3;
             justify-content: center;
             padding: 0px 15px;
 
-            h1 {
+            & h1 {
                 margin: 0px;
                 font-size: 22px;
                 color: rgba(255, 255, 255, 0.8);
             }
 
-            h6 {
+            & h6 {
                 font-size: 16px;
                 color: $primary;
                 margin: 0;
 
-                span {
+                & span {
                     color: #FFF;
                 }
             }
@@ -90,7 +90,7 @@ $blue:#1e76e3;
         }
     }
 
-    .content {
+    & .content {
         min-height: 400px;
         width: 100%;
         overflow-x: hidden;
@@ -100,9 +100,10 @@ $blue:#1e76e3;
         overflow-y: hidden;
         transition: all .4s cubic-bezier(.4, 0, .2, 1) .3s;
 
-        .bttn {
+        & .bttn {
             display: block;
             padding: 10px 25px;
+            margin-top: 12px;
             text-align: center;
             border-radius: 3px;
             background-color: $blue;
@@ -111,11 +112,11 @@ $blue:#1e76e3;
             transition: 300ms all;
 
             &:hover {
-                background-color: darken($blue, 5%);
+                background-color: color($blue shade(15%));
             }
         }
 
-        p {
+        & p {
             color: rgba(0, 0, 0, 0.5);
             text-align: justify;
 

@@ -61,7 +61,7 @@
     z-index: 1;
     animation: logo 5s ease-out 2.5s;
 
-    sub {
+    & sub {
         display: block;
         font-size: 0.3em;
         letter-spacing: 0;
@@ -110,7 +110,7 @@
         pointer-events: none;
     }
 
-    p {
+    & p {
         text-align: justify;
         margin: 0.8em 0;
 
@@ -119,7 +119,7 @@
         }
     }
 
-    a {
+    & a {
         color: #ff6;
         text-decoration: underline;
     }

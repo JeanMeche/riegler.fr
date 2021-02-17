@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import styles from './Neon.module.scss';
+import styles from './Neon.module.css';
 
 const Neon: FunctionComponent = () => (
   <div className={styles.tiles}>

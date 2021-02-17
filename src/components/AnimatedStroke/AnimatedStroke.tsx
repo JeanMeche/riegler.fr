@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect } from 'react';
-import styles from './AnimatedStroke.module.scss';
+import styles from './AnimatedStroke.module.css';
 
 const AnimatedStroke: FunctionComponent<{ string: string }> = (props: { string: string }) => {
   useEffect(() => {

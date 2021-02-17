@@ -41,12 +41,12 @@
     position: absolute;
     width: 100%;
 
-    div {
+    & div {
       font-size: 8vmin;
       padding: 2vmin 0;
       position: absolute;
 
-      span {
+      & span {
         display: block;
       }
     }
@@ -57,14 +57,14 @@
   border-bottom: 1vmin solid #000;
   top: 0;
 
-  div {
+  & div {
     animation: showTopText 1s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     bottom: 0;
     transform: translate(0, 100%);
 
-    span:first-child {
+    & span:first-child {
       color: #767676;
     }
   }
@@ -73,7 +73,7 @@
 .textBottom {
   bottom: 0;
 
-  div {
+  & div {
     animation: showBottomText 0.5s;
     animation-delay: 1.75s;
     animation-fill-mode: forwards;

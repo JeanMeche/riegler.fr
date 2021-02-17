@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useRef } from 'react';
 import { useSprings, animated } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
-import styles from './pager.module.scss';
+import styles from './pager.module.css';
 import ClientOnly from '../ClientOnly';
 
 const pages = [

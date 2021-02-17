@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import ReactTyped from 'react-typed';
-import styles from './404.module.scss';
+import styles from './404.module.css';
 
 const strings = [`Oops! It looks like you're lost. <br> ^1000
     Sorry about that. <br> ^1000 

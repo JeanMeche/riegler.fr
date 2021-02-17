@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
-import styles from './Home.module.scss';
+import styles from './Home.module.css';
 import cn from 'classnames'
 
 const Home: FunctionComponent = () => (
