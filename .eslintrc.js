@@ -28,7 +28,8 @@ module.exports = {
                 ]
             }
         ],
-        'react/no-unescaped-entities': 0
+        'react/no-unescaped-entities': 0,
+        '@typescript-eslint/no-var-requires': 0, // to allow require for next-optimized-images
     },
     overrides: [{
         files: [

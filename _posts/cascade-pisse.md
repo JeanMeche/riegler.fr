@@ -10,7 +10,7 @@ ogImage:
 Aujourd'hui je suis parti découvrir la [Cascade de la Pisserote](https://www.openstreetmap.org/node/5034692019). 
 Le température ont été négatives ces derniers jours, le lieu est recouvert de glace. 
 
-![Ice cubes at the cascade](/assets/blog/cascade-pisse/icecubes.jpg "Ice cubes at the cascade")
+![Ice cubes at the cascade](assets/blog/cascade-pisse/icecubes.jpg "Ice cubes at the cascade")
 
 En revenant de la sortie, j'ai repensé a son nom, Pisserotte. Une cascade qui pisse c'est probablement commun.
 Je suis donc parti en quête des autres cascades qui portent un nom avec la même racine. 
@@ -24,7 +24,7 @@ out;
 ```
 Avec [Overpass Turbo](overpass-turbo.eu/s/13G3) on peut voir directement le résultat sur une carte. 
 
-![Overpass Query Result](/assets/blog/cascade-pisse/map.png "Overpass Query Result")
+![Overpass Query Result](assets/blog/cascade-pisse/map.png "Overpass Query Result")
 
 
 54 cascades, chutes & consors. 2 ne sont pas représentés sur cette carte (1 en Ecosse, 1 sur Terre-Neuve). 

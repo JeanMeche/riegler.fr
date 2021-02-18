@@ -8,7 +8,6 @@ import Layout from '../../components/Blog/layout'
 import { getPostBySlug, getAllPosts, Post } from '../../api/api'
 import PostTitle from '../../components/Blog/post-title'
 import Head from 'next/head'
-import markdownToHtml from '../../api/markdownToHtml'
 import { FunctionComponent } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
@@ -61,14 +60,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     'ogImage',
     'coverImage',
   ])
-  const content = await markdownToHtml(post.content || '')
-
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      post: post,
     },
   }
 }
