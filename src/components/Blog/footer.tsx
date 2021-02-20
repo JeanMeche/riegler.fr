@@ -1,13 +1,17 @@
 import Container from './container'
+import { format } from 'date-fns'
 
 export default function Footer(): JSX.Element {
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
+          <div className="text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
+            <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight">
+              Matt.
+            </h3>
+            <div className="text-xs">Staticly built on <span title={new Date().toLocaleString()}>{format(new Date(), 'PPP')}</span></div>
+          </div>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
               <a className="text-gray-500 hover:text-blue-500 duration-200" href="https://facebook.com/matthieu.riegler" target="_blank" rel="noreferrer">

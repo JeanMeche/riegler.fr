@@ -9,7 +9,7 @@ module.exports = withPlugins([
         imagesFolder: 'public/assets',
         responsive: {
             adapter: require('responsive-loader/sharp'),
-            sizes: [ 640, 960, 1200, 1800],
+            sizes: [640, 960, 1200, 1800],
             placeholder: true,
             placeholderSize: 40,
         }
