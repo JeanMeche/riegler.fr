@@ -11,6 +11,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.7",
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.3",
     "date-fns": "^2.17.0",
     "gray-matter": "^4.0.2",
     "imagemin-mozjpeg": "^9.0.0",
@@ -23,7 +24,6 @@
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
     "react-spring": "9.0.0-rc.3",
     "react-typed": "^1.2.0",
     "react-use-gesture": "^8.0.0",
@@ -38,7 +38,10 @@
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "clean": "npx rimraf .next build out",
-    "serve-build": "npx http-server out"
+    "serve-build": "npx http-server out -o",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "browserslist": {
     "production": [
@@ -53,6 +56,8 @@
     ]
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^10.0.7",
+    "@types/babel__core": "^7.1.12",
     "@types/classnames": "^2.2.11",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
@@ -71,8 +76,10 @@
     "postcss-import-url": "^7.0.0",
     "postcss-nesting": "^7.0.1",
     "postcss-nth-list": "^1.0.2",
+    "postcss-url": "^10.1.1",
     "responsive-loader": "^2.3.0",
     "sharp": "^0.27.1",
-    "tailwindcss": "^2.0.3"
+    "tailwindcss": "^2.0.3",
+    "url-loader": "^4.1.1"
   }
 }

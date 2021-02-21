@@ -10,6 +10,7 @@ const CoverImage: FunctionComponent<CoverImageProps> = ({ title, src, slug, heig
     <div style={{ position: 'relative', height: height + 'px' }}>
       <img
         srcSet={imgSrc.srcSet}
+        loading="lazy"
         alt={`Cover for ${title}`}
         className={cn('shadow-sm', 'cover-image', {
           'hover:shadow-md transition-shadow duration-200': slug,

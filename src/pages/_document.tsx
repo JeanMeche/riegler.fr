@@ -10,8 +10,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="icon" href="/favicon/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
-          <meta name="description" content="Home is where wifi connects automatically " />
+          <meta name="description" content="Home is where wifi connects automatically" />
         </Head>
         <body>
           <Main />
