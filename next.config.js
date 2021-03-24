@@ -7,6 +7,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextjsConfig = {
     trailingSlash: true,
+    env: {
+       staticGenerationDate: new Date(), 
+    }
 }
 
 const optimizedImageConfig = {

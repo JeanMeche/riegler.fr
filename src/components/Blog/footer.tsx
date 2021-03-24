@@ -2,6 +2,8 @@ import Container from './container'
 import { format } from 'date-fns'
 
 export default function Footer(): JSX.Element {
+  const staticGenerationDate = new Date(process.env.staticGenerationDate!);
+
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
       <Container>
@@ -10,7 +12,7 @@ export default function Footer(): JSX.Element {
             <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight">
               Matt.
             </h3>
-            <div className="text-xs">Staticly built on <span title={new Date().toLocaleString()}>{format(new Date(), 'PPP')}</span></div>
+            <div className="text-xs">Staticly built on <span title={staticGenerationDate.toLocaleString()}>{format(staticGenerationDate, 'PPP')}</span></div>
           </div>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
