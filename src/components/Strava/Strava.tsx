@@ -70,7 +70,9 @@ function humanDuration(time: number) {
 
 function fetchStravaData(): Promise<StravaData> {
   const stravaDataUrl = 'https://jeanmeche.azurewebsites.net/api/StravaLatestActivity?';
-  return fetch(stravaDataUrl).then((resp) => resp.json())
+  return fetch(stravaDataUrl)
+    .catch(() => fetch(stravaDataUrl))
+    .then((resp) => resp.json())
 }
 
 interface StravaData {
