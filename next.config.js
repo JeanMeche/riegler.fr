@@ -8,8 +8,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextjsConfig = {
     trailingSlash: true,
     env: {
-       staticGenerationDate: new Date(), 
-    }
+        staticGenerationDate: new Date(),
+    },
+    future: {
+        webpack5: true,
+    },
+    images: {
+        domains: ['pbs.twimg.com'],
+    },
 }
 
 const optimizedImageConfig = {

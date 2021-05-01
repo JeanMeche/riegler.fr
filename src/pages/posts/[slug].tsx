@@ -12,10 +12,10 @@ import { FunctionComponent } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 interface PostProps {
-  post: Post, morePosts: Post[], preview: boolean
+  post: Post
 }
 
-const PostCmp: FunctionComponent<PostProps> = ({ post, morePosts, preview }) => {
+const PostCmp: FunctionComponent<PostProps> = ({ post }) => {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
