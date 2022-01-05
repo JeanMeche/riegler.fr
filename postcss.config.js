@@ -1,7 +1,5 @@
 module.exports = {
   plugins: [
-    'tailwindcss',
-    'autoprefixer',
     'postcss-nesting',
     'postcss-calc',
     'postcss-advanced-variables',
@@ -9,5 +7,7 @@ module.exports = {
     'postcss-nth-list',
     'postcss-color-function',
     'postcss-url',
+    'tailwindcss',
+    'autoprefixer',
   ],
 }

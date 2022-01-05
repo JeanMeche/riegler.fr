@@ -2,7 +2,7 @@
 title: 'Rouler'
 excerpt: 'Monter pour descendre, rouler pour rouler.'
 coverImage: 'assets/blog/cycling/cover.jpg'
-date: '2022-01-01T00:00:00.000Z'
+date: '2021-09-15T00:00:00.000Z'
 updated: '2022-01-05T21:00:00.000Z'
 ogImage:
   url: 'assets/blog/cycling/cover.jpg'

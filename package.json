@@ -47,7 +47,8 @@
     "serve-build": "npx http-server out -o",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+    "postinstall": "patch-package"
   },
   "browserslist": {
     "production": [
@@ -75,6 +76,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "ftp-deploy": "^2.4.1",
+    "patch-package": "^6.4.7",
     "postcss": "^8.2.6",
     "postcss-advanced-variables": "^3.0.1",
     "postcss-calc": "^8.0.0",
