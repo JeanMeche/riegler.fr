@@ -3,6 +3,9 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import remarkBreaks from 'remark-breaks';
+import rehypeHighlight from 'rehype-highlight';
+
+import 'highlight.js/styles/base16/solarized-dark.css';
 import markdownStyles from './markdown-styles.module.css';
 
 const components: { [nodeType: string]: ElementType } = {
@@ -28,6 +31,11 @@ const components: { [nodeType: string]: ElementType } = {
       </td>
     );
   },
+  code: (code: HTMLElement) => {
+    return (
+      <code className={`${code.className} rounded-lg text-sm`}>{code.children}</code>
+    );
+  },
 };
 
 export default function PostBody({
@@ -36,12 +44,12 @@ export default function PostBody({
   content: string;
 }): JSX.Element {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <ReactMarkdown
         // @ts-expect-error see https://github.com/rehypejs/rehype/discussions/63
-        remarkPlugins={[remarkBreaks, remarkGfm]} 
+        remarkPlugins={[remarkBreaks, remarkGfm]}
         // @ts-expect-error see https://github.com/remarkjs/remark-rehype/issues/16
-        rehypePlugins={[rehypeRaw]}
+        rehypePlugins={[rehypeRaw, rehypeHighlight]}
         className={markdownStyles['markdown']}
         components={components}
       >
