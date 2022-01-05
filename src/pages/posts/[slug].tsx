@@ -39,6 +39,7 @@ const PostCmp: FunctionComponent<PostProps> = ({ post }) => {
                   title={post.title}
                   coverImage={post.coverImage}
                   date={post.date}
+                  updated={post.updated}
                 />
                 <PostBody content={post.content} />
               </article>
@@ -55,6 +56,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = getPostBySlug(params?.slug as string, [
     'title',
     'date',
+    'updated',
     'slug',
     'content',
     'ogImage',

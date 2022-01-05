@@ -15,6 +15,7 @@ const nextjsConfig = {
     },
     images: {
         domains: ['pbs.twimg.com'],
+        disableStaticImages: true
     },
 }
 
@@ -29,11 +30,6 @@ const optimizedImageConfig = {
         placeholderSize: 40,
     }
 };
-
-
-
-module.exports = withBundleAnalyzer({})
-
 
 module.exports = withPlugins([
     [withOptimizedImages, optimizedImageConfig],

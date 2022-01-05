@@ -6,6 +6,7 @@ export interface Post {
   title: string,
   coverImage: string,
   date: string,
+  updated?: string,
   excerpt: string,
   slug: string,
   content: string,

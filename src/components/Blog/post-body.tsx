@@ -1,21 +1,52 @@
-import { ElementType } from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import markdownStyles from './markdown-styles.module.css'
+import { CSSProperties, ElementType } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+import remarkBreaks from 'remark-breaks';
+import markdownStyles from './markdown-styles.module.css';
 
 const components: { [nodeType: string]: ElementType } = {
-  image: function image(image: HTMLImageElement) {
+  image: (image: HTMLImageElement) => {
     const imgSrc = require(`../../../public/${image.src}?sizes[]=300,sizes[]=600`);
-    return <img srcSet={imgSrc.srcSet} alt={image.alt} height="200" width="355" /> as JSX.Element
+    return (
+      <img srcSet={imgSrc.srcSet} alt={image.alt} height="200" width="355" />
+    ) as JSX.Element;
   },
-}
+  table: (table: HTMLTableElement) => {
+    return (
+      <table className="table-auto shadow-lg bg-white rounded-lg w-full">
+        {table.children}
+      </table>
+    );
+  },
+  td: (td: HTMLTableCellElement) => {
+    const { children, style } = td;
+    const styles = style as CSSProperties;
+    return (
+      <td style={styles} className="border px-8 py-4">
+        {children}
+      </td>
+    );
+  },
+};
 
-export default function PostBody({ content }: { content: string }): JSX.Element {
+export default function PostBody({
+  content,
+}: {
+  content: string;
+}): JSX.Element {
   return (
     <div className="max-w-2xl mx-auto">
-      <ReactMarkdown plugins={[remarkGfm]} className={markdownStyles["markdown"]} components={components} >
+      <ReactMarkdown
+        // @ts-expect-error see https://github.com/rehypejs/rehype/discussions/63
+        remarkPlugins={[remarkBreaks, remarkGfm]} 
+        // @ts-expect-error see https://github.com/remarkjs/remark-rehype/issues/16
+        rehypePlugins={[rehypeRaw]}
+        className={markdownStyles['markdown']}
+        components={components}
+      >
         {content}
       </ReactMarkdown>
     </div>
-  )
+  );
 }
