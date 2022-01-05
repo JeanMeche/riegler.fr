@@ -30,6 +30,11 @@ module.exports = {
         ],
         'react/no-unescaped-entities': 0,
         '@typescript-eslint/no-var-requires': 0, // to allow require for next-optimized-images
+        "jsx-a11y/anchor-is-valid": ["error", {
+            "components": ["Link"],
+            "specialLink": ["hrefLeft", "hrefRight"],
+            "aspects": ["invalidHref", "preferButton"]
+        }]
     },
     overrides: [{
         files: [

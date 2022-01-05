@@ -22,8 +22,8 @@ const Home: FunctionComponent = () => {
         </div>
       </div>
       <div className={cn('static', styles.button)}>
-        <a className="absolute bottom-10 right-10 cursor-pointer">
-          <Link href="posts">
+        <Link href="posts">
+          <a className="absolute bottom-10 right-10 cursor-pointer">
             <svg
               className="w-24 h-24 ml-2 transition delay-2000 transform hover:-translate-y-1 hover:scale-110"
               fill="none"
@@ -35,8 +35,8 @@ const Home: FunctionComponent = () => {
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
-          </Link>
-        </a>
+          </a>
+        </Link>
       </div>
     </div>
   );
