@@ -30,11 +30,13 @@ Voilà la listes des plus hauts cols (🇫🇷) accessible par la route et mes a
 |       Sarenne       |   1 999m | [08/07/2017](https://www.strava.com/activities/1092025083)           |
 |      Madeleine      |   1 993m | [02/07/2020](https://www.strava.com/activities/627362815) |      |
 |       Larche        |   1 991m |                                                                                                          |
-| Cormet de Roselend  |   1 968m |  17/08/2014                                                |
+| Cormet de Roselend  |   1 968m |  17/08/2014 <br> [28/05/2022](https://www.strava.com/activities/7216700510)                                                  |
 |       Glandon       |   1 922m | [15/06/2020](https://www.strava.com/activities/3619501619) <br>[05/09/2020](https://www.strava.com/activities/4015860386 ) <br >[05/09/2021](https://www.strava.com/activities/5911584998)                                                                                                          |
 |        Tende        |   1 871m |                                                                                                          |
 |     Montgenèvre     |   1 850m | [18/06/2020](https://www.strava.com/activities/3633687460)                               |
 |       Échelle       |   1 762m | [18/06/2020](https://www.strava.com/activities/3633687460)            |
+|       Col du Pré    |   1 701m | 17/08/2014 <br>[28/05/2022](https://www.strava.com/activities/7216700510)            |
+
 
 ## Cols étrangers 
 
