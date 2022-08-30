@@ -1,26 +1,28 @@
+import 'highlight.js/styles/base16/solarized-dark.css';
 import { CSSProperties, ElementType } from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import remarkBreaks from 'remark-breaks';
-import rehypeHighlight from 'rehype-highlight';
-
-import 'highlight.js/styles/base16/solarized-dark.css';
+import remarkGfm from 'remark-gfm';
 import markdownStyles from './markdown-styles.module.css';
+
+type ResponsiveImageOutput = {
+  src: string;
+  srcSet: string;
+  placeholder: string;
+  images: { path: string; width: number; height: number }[];
+  width: number;
+  height: number;
+};
 
 const components: { [nodeType: string]: ElementType } = {
   image: (image: HTMLImageElement) => {
-    const imgSrc = require(`../../../public/${image.src}?sizes[]=300,sizes[]=600`);
-    return (
-      <img srcSet={imgSrc.srcSet} alt={image.alt} height="200" width="355" />
-    ) as JSX.Element;
+    const imgSrc = require(`../../../public/${image.src}?sizes[]=300,sizes[]=600`) as ResponsiveImageOutput;
+    return (<img srcSet={imgSrc.srcSet} alt={image.alt} height="200" width="355" />) as JSX.Element;
   },
   table: (table: HTMLTableElement) => {
-    return (
-      <table className="table-auto shadow-lg bg-white rounded-lg w-full">
-        {table.children}
-      </table>
-    );
+    return <table className="table-auto shadow-lg bg-white rounded-lg w-full">{table.children}</table>;
   },
   td: (td: HTMLTableCellElement) => {
     const { children, style } = td;
@@ -32,17 +34,11 @@ const components: { [nodeType: string]: ElementType } = {
     );
   },
   code: (code: HTMLElement) => {
-    return (
-      <code className={`${code.className} rounded-lg text-sm`}>{code.children}</code>
-    );
+    return <code className={`${code.className} bg-slate-200 p-1 rounded-md text-sm`}>{code.children}</code>;
   },
 };
 
-export default function PostBody({
-  content,
-}: {
-  content: string;
-}): JSX.Element {
+export default function PostBody({ content }: { content: string }): JSX.Element {
   return (
     <div className="max-w-4xl mx-auto">
       <ReactMarkdown
