@@ -3,6 +3,7 @@ title: 'Typescript typing tricks'
 excerpt: 'Nice Typscript typing you might not know ! (And will make you 💙 TS)'
 coverImage: 'assets/blog/ts-tricks/cover.png'
 date: '2022-08-27T00:00:00.000Z'
+updated: '2022-08-30T00:00:00.000Z'
 ogImage:
   url: 'assets/blog/ts-tricks/cover.png'
 ---
@@ -162,5 +163,33 @@ export class Factory {
 ```
 
 [Playground](https://www.typescriptlang.org/play?jsx=0#code/C4TwDgpgBAwg9gOwM7AE4FcDGw6oIKoDm6AthAsEgDwAqAfFALxQ1QQAew5AJklAhADuUABQA6CQEMiSAFxQAlggBmEVFAAKASiYNJCEAFgAUFDNQA-JpPmo8gQDc1AbhMnMAG0lI+AMThwUADeNuaYiCgY2LgiYKgKDpJcUMoB8pFKhAA0UHEJSdAARtL2pIVqOkFQAL4mtcYmHGC4wFCe3n6S0aggwaFmYOiFHgqYbagQBbRsnDx8AsLiUjLyBKiSIFT6IHQ6jHoGdCL9tm0RaPI0WSe2EmJg0pIkcrDnUTj4RKTklLR0J1p5ABJZDAfSYCA0cAQP59UynMwTYDoVAIfhCM6g1BLe6PZ5aVzwsz1E6DYajFIBESVG7mYAACwUSDEmAmBRE-jgOQARKk4NycgBGAknerVIA)
+
+## Unit test the type system & expecting error
+
+Sometimes we want to ensure that some types/parameters are considered invalid.
+
+```typescript
+declare function foo(bar: string): void;
+
+foo('3'); // OK
+
+// @ts-expect-error
+foo(3); // Also OK
+```
+
+But if we change the type of `foo` we'll get following :
+
+```typescript
+declare function foo(bar: string | number): void;
+
+// @ts-expect-error <== Unused '@ts-expect-error' directive.
+foo(3); // KO
+
+foo('3'); // OK
+```
+
+This means, this way we can have tests on the typings only & not relying on the runtime.
+
+---
 
 More coming soon !
