@@ -3,7 +3,7 @@ title: 'Typescript typing tricks'
 excerpt: 'Nice Typscript typing you might not know ! (And will make you 💙 TS)'
 coverImage: 'assets/blog/ts-tricks/cover.png'
 date: '2022-08-27T00:00:00.000Z'
-updated: '2022-08-30T00:00:00.000Z'
+updated: '2022-09-01T00:00:00.000Z'
 ogImage:
   url: 'assets/blog/ts-tricks/cover.png'
 ---
@@ -189,6 +189,28 @@ foo('3'); // OK
 ```
 
 This means, this way we can have tests on the typings only & not relying on the runtime.
+
+## Extending a mapped type
+
+Suppose you need an object with a generic key but also other fixed properties. Unfortunately Mapped types may not declare properties or methods. So the way to go is an intersection !
+
+```typescript
+type Pagination<Key extends string, Content> = {
+  pagination: {
+    total: number;
+    page: number;
+  };
+} & { [K in Key]: Content[] };
+type Product = {};
+
+type ProductData = Pagination<'products', Product>;
+const productResponse: ProductData = {
+  pagination: { total: 100, page: 0 },
+  products: [],
+};
+```
+
+[Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBACghgcwJYDs7CQexQHgNIQhQQAewEKAJgM5TXABOqCANFAMLbkrAB8UAXigBvALAAoKFKhhEqdFhQAuEROnqowTMDgAbFSgCuAWwBGEBgG41GqbIQQDJ81ZtSAviwnuoAMlWStlAA2nhQqFAEIAC6Kpw8FMDB0daBHhKgkLAMmJSGAMbAgiLuEhng0DA5eYUAIuhwxfDIaBjYOADkYNUFwNQdbFW5vbyp+dj0Mj2FAEoQ1GATjtnDdQ3FYmkycq2KKsKa2noqAIwADGds9stnUJ5uU6t9KslQcLRDNUnRXuLuQA)
 
 ---
 
