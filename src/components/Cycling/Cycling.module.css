@@ -1,4 +1,6 @@
 .cyclingWrapper * {
+  --jersey: #3c3c3c;
+
   box-sizing: content-box;
   &:after,
   &:before {
@@ -12,6 +14,7 @@
   align-items: center;
   overflow: hidden;
   width: 100%;
+  transform: scale(0.8);
 }
 
 .bikeRiding {
@@ -21,7 +24,6 @@
   align-items: center;
   width: 100%;
   height: 600px;
-  transform: scale(0.8);
   overflow: hidden;
   background-color: lightblue;
   border-radius: 24px;
@@ -188,7 +190,10 @@
 .shadowWrapper {
   position: absolute;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  font-size: 2rem;
+
   top: 510px;
 }
 .shadow {
@@ -274,8 +279,8 @@
   position: absolute;
   width: 80px;
   height: 80px;
-  border-top: 50px solid #e9d8a6;
-  border-left: 50px solid #e9d8a6;
+  border-top: 50px solid var(--jersey);
+  border-left: 50px solid var(--jersey);
   border-top-left-radius: 100%;
   top: -190px;
   left: -18px;
@@ -285,12 +290,12 @@
   content: '';
   position: absolute;
   width: 50px;
-  height: 43px;
+  height: 50px;
   border-radius: 50%;
-  background-color: #e9d8a6;
+  background-color: var(--jersey);
   left: 50px;
   top: -50px;
-  box-shadow: -10px 10px#e9d8a6;
+  box-shadow: -10px 10pxvar (--jersey);
 }
 
 .rightArm,

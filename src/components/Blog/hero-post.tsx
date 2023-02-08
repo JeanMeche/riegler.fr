@@ -1,24 +1,18 @@
-import DateFormatter from './date-formatter'
-import CoverImage from './cover-image'
-import Link from 'next/link'
-import { FunctionComponent } from 'react'
-import { Post } from '../../api/api'
+import Link from 'next/link';
+import { FunctionComponent } from 'react';
+import { Post } from '../../api/api';
+import CoverImage from './cover-image';
+import DateFormatter from './date-formatter';
 
-type HeroProps = Pick<Post, 'title' | 'coverImage' | 'date' | 'excerpt' | 'slug'>
+type HeroProps = Pick<Post, 'title' | 'coverImage' | 'date' | 'excerpt' | 'slug'>;
 
-const HeroPost: FunctionComponent<HeroProps> = ({ title, coverImage, date, excerpt, slug, }) => {
+const HeroPost: FunctionComponent<HeroProps> = ({ title, coverImage, date, excerpt, slug }) => {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
-        <CoverImage
-          title={title}
-          src={coverImage}
-          slug={slug}
-          height={620}
-          width={1240}
-        />
+      <div className="mb-8 md:mb-8">
+        <CoverImage title={title} src={coverImage} slug={slug} height={620} width={1240} />
       </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-8">
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -34,7 +28,7 @@ const HeroPost: FunctionComponent<HeroProps> = ({ title, coverImage, date, excer
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroPost
+export default HeroPost;

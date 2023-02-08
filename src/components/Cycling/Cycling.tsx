@@ -8,6 +8,7 @@ const Cycling: FunctionComponent = () => {
         <div className={styles.clouds}></div>
         <div className={styles.shadowWrapper}>
           <div className={styles.shadow}></div>
+          <div className="">Loading...</div>
         </div>
         <div className={styles.cyclist}>
           <div className={styles.bike}>
