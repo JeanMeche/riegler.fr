@@ -1,4 +1,9 @@
-
+.stravaWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
 
 .stravaCard {
   --border-radius: 4px;
@@ -17,8 +22,7 @@
 
 .latestRun {
   border-radius: var(--border-radius);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 0.5rem;
 
   &.hasPhoto {
@@ -82,7 +86,7 @@
 }
 
 .goalProgress::after {
-  content: "";
+  content: '';
   background-color: rgba(128, 128, 128, 0.2);
   bottom: 0;
   border-radius: var(--border-radius);
