@@ -1,84 +1,218 @@
-/* Tailwind directives  */
+/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* You can add global styles to this file, and also import other style files */
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+pre {
+  border-radius: 0.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/*
+ * Laserwave Theme originally by Jared Jones for Visual Studio Code
+ * https://github.com/Jaredk3nt/laserwave
+ *
+ * Ported for PrismJS by Simon Jespersen [https://github.com/simjes]
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  background: #18181b;
+  color: #ffffff;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* this is the default */
+  /* The following properties are standard, please leave them as they are */
+  font-size: 0.9em;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  /* The following properties are also standard */
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
-.card {
-  padding: 2em;
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+  background: #27272a;
+  color: inherit;
 }
 
-.logo {
-  @apply box-content;
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection {
+  background: #27272a;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+/* Properties specific to code blocks */
+pre[class*="language-"] {
+  padding: 1em; /* this is standard */
+  margin: 0.5em 0; /* this is the default */
+  overflow: auto; /* this is standard */
+  border-radius: 0.5em;
+}
+
+/* Properties specific to inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.5rem;
+  white-space: normal; /* this is standard */
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: #71717a;
+}
+
+.token.punctuation {
+  color: #52525b;
+}
+
+.token.builtin,
+.token.constant,
+.token.boolean {
+  color: #fde047;
+}
+
+.token.number {
+  color: #fb7185;
+}
+
+.token.important,
+.token.atrule,
+.token.property,
+.token.keyword {
+  color: #0ea5e9;
+}
+
+.token.doctype,
+.token.operator,
+.token.inserted,
+.token.tag,
+.token.class-name,
+.token.symbol {
+  color: #7dd3fc;
+}
+
+.token.attr-name,
+.token.function,
+.token.deleted,
+.token.selector {
+  color: #f43f5e;
+}
+
+.token.attr-value,
+.token.regex,
+.token.char,
+.token.string {
+  color: #b4dce7;
+}
+
+.token.entity,
+.token.url,
+.token.variable {
+  color: #ffffff;
+}
+
+/* The following rules are pretty similar across themes, but feel free to adjust them */
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+/* Prose overloads */
+.prose {
+  p > img {
+    margin: auto;
   }
 }

@@ -18,12 +18,8 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
-    "useDefineForClassFields": false,
-    "skipLibCheck": true
+    "lib": ["ES2022", "dom"],
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -32,11 +28,7 @@
     "strictTemplates": true
   },
   "references": [
-    {
-      "path": "tsconfig.app.json"
-    },
-    {
-      "path": "tsconfig.spec.json"
-    }
+    { "path": "tsconfig.app.json" },
+    { "path": "tsconfig.spec.json" }
   ]
 }
