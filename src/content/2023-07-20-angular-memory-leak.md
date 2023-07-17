@@ -73,8 +73,8 @@ This stacktrace here is quite explicit, our node is staying confortably in a Map
 >
 > ```
 > "sourceMap": {
->  "scripts": true,
->  "vendor": true
+>   "scripts": true,
+>   "vendor": true
 > },
 > ```
 
