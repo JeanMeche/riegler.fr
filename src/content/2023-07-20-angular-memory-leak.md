@@ -3,11 +3,9 @@ title: "Find, debug and fix a memory leak in Angular"
 excerpt: "Know the tools to help you investigate memory leaks."
 coverImage: "blog/angular-leak/daan-mooij-91LGCVN5SAI-unsplash.jpg"
 date: "2023-07-20T00:00:00.000Z"
-ogImage:
-  url: "assets/blog/ts-tricks/cover.png"
 ---
 
-Today, I'd like to present to you an issue that has been reported several years ago. A user was concerned by a memory leak when using the animation module. Let explore the investigation that lead to fixing this issue !
+Today, I'd like to present to you an issue that has been reported several years ago. A user was concerned by a memory leak when using the animation module. Let revisit the investigation that lead to fixing this issue !
 
 ## Confirming the presence of a memory leak
 
@@ -47,7 +45,7 @@ This can be detected with the DOM Nodes counter of the Chromium/Chrome/Edge DevT
 In this illustration you can see 2 specific behaviours.
 
 1. After the bootstrap, there is a drop in the DOM Nodes count. This is the Garbage Collector (GC) doing his work: cleaning unreferenced DOM nodes.
-2. Next, I played with the toggle button and increased slowly but surely the Dom nodes.
+2. Next, I played with the toggle button and increased slowly but surely the number of DOM nodes.
 
 To make sure this is not the GC lagging behind, I triggered it manually from the DevTools.
 
@@ -55,11 +53,11 @@ To make sure this is not the GC lagging behind, I triggered it manually from the
 
 ## Finding the origin of the leak
 
-Now that we know that we have an issue, where can we start this investigation ?
+Now that we know that we have an issue, where can we start looking for the culprit ?
 
-Edge Chromium (Yes at the time of writing, only Edge provide this feature), has a special tool in the DevTools : Detached Elements
+Edge Chromium (Yes at the time of writing, only Edge provides this feature), has a special tool in the DevTools : Detached Elements.
 
-You can hook it in the bottom panel next to the console to investigate Dom Node that have been detached from the DOM. Those detached nodes are still in memory because they are still reference somewhere in the code. This is a good hint at memory leaks.
+You can hook it in the bottom panel next to the console to investigate Dom Nodes that have been detached from the DOM. Those detached nodes are still in memory because they are still referenced somewhere in the code. This is a good hint at memory leaks.
 
 In our case it looks like this :
 
@@ -80,4 +78,12 @@ This stacktrace here is quite explicit, our node is staying confortably in a Map
 > },
 > ```
 
-Without entering too much in the detail of the fix provided in [this PR](https://github.com/angular/angular/pull/50929/files). The solution to our memory leak was to empty the Map at the end of the animation (which wasn't done under certain circumstances).
+Without entering too much in the detail of the fix provided in [this PR](https://github.com/angular/angular/pull/50929/files), the solution to our memory leak was to empty the Map at the end of the animation (which wasn't done under certain circumstances).
+
+Without the node being referenced in this Map, the GC can trash it as expected and we no longer have out memory leak !
+
+Et voilà !
+
+I hope have learned something new today, see next time !
+
+Matt.
