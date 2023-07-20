@@ -1,38 +1,35 @@
-/* eslint-disable */
-const colors = require('tailwindcss/colors')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: "class",
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,md}"],
   theme: {
     extend: {
-      colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
-        orange: colors.orange,
-      },
-      spacing: {
-        28: '7rem',
-      },
-      letterSpacing: {
-        tighter: '-.04em',
-      },
-      textDecoration: ['active'],
-      lineHeight: {
-        tight: 1.2,
-      },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
-      boxShadow: {
-        sm: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        md: '0 8px 30px rgba(0, 0, 0, 0.12)',
+      typography(theme) {
+        return {
+          DEFAULT: {
+            css: {
+              "blockquote p:first-of-type::before": { content: "none" },
+              "blockquote p:first-of-type::after": { content: "none" },
+              "code::before": {
+                content: "none", // don’t generate the pseudo-element
+              },
+              "code::after": {
+                content: "none",
+              },
+              code: {
+                color: theme("colors.stone.100"),
+                backgroundColor: theme("colors.slate.500"),
+                borderRadius: theme("borderRadius.DEFAULT"),
+                paddingLeft: theme("spacing[1.5]"),
+                paddingRight: theme("spacing[1.5]"),
+                paddingTop: theme("spacing.1"),
+                paddingBottom: theme("spacing.1"),
+              },
+            },
+          },
+        };
       },
     },
   },
-}
+  plugins: [require("tailwindcss/nesting"), require("@tailwindcss/typography")],
+};
