@@ -25,6 +25,9 @@ module.exports = {
                 paddingTop: theme("spacing.1"),
                 paddingBottom: theme("spacing.1"),
               },
+              img: {
+                borderRadius: theme("borderRadius.DEFAULT"),
+              },
             },
           },
         };
