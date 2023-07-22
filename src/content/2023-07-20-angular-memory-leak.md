@@ -68,6 +68,10 @@ When clicking the node ID, we get the stacktrace where this object is referenced
 
 This stacktrace here is quite explicit, our node is staying confortably in a Map named `_statesByElement` located in the `TransitionAnimationEngine` class.
 
+These debugging information are also accessible in Chrome DevTools but less directly. Take a memory heap snapshot of your app, filter to search for "detached" and you'll find a similar list of detacted element in the snapshot.
+
+![Detached Element in Chrome DevTools](/blog/angular-leak/chrome-detached.png "Detached Element in Chrome DevTools")
+
 > 📝 Note:
 > To investigate the code source of Angular, you can enable the framework source maps in the `angular.json` settings like following :
 >
