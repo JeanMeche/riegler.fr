@@ -11,7 +11,8 @@
     "start": "npm run dev",
     "build": "ng build",
     "watch": "ng build --watch",
-    "test": "ng test"
+    "test": "ng test",
+    "serve": "http-server ./dist/analog/public"
   },
   "dependencies": {
     "@analogjs/content": "0.2.0-beta.25",
@@ -46,6 +47,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/prismjs": "^1.26.0",
     "autoprefixer": "^10.4.14",
+    "http-server": "^14.1.1",
     "jsdom": "^22.1.0",
     "nx": "^16.4.0",
     "postcss": "^8.4.21",
