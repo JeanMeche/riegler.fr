@@ -1,27 +1,38 @@
-import {ContentRenderer, injectContent} from "@analogjs/content";
+import { ContentRenderer, injectContent } from '@analogjs/content';
 import {
   AfterViewChecked,
   Directive,
   OnChanges,
-  OnInit, TemplateRef, ViewContainerRef,
+  OnInit,
+  TemplateRef,
+  ViewContainerRef,
   inject,
-} from "@angular/core";
-import {DomSanitizer} from "@angular/platform-browser";
-import {take} from "rxjs";
-import {ContentMetadata, ContentWithMetadata} from "../content-metadata/content-metadata";
-import {isEmpty} from "../util/is-empty";
+} from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { take } from 'rxjs';
+import {
+  ContentMetadata,
+  ContentWithMetadata,
+} from '../content-metadata/content-metadata';
+import { isEmpty } from '../util/is-empty';
 
 @Directive({
   selector: '[analogContent]',
   standalone: true,
 })
 export default class AnalogContentDirective
-  implements OnInit, OnChanges, AfterViewChecked {
-  private _templateRef = inject(TemplateRef<any>)
-  private _viewContainer = inject(ViewContainerRef)
+  implements OnInit, OnChanges, AfterViewChecked
+{
+  private _templateRef = inject(TemplateRef<any>);
+  private _viewContainer = inject(ViewContainerRef);
   private _sanitizer = inject(DomSanitizer);
   private _contentRenderer = inject(ContentRenderer);
-  private _content = injectContent<ContentMetadata>();
+  readonly route = inject(ActivatedRoute);
+  readonly post$ = injectContent<ContentMetadata>({
+    param: 'slug',
+    subdirectory: `posts/${this.route.snapshot.paramMap.get('slug')}`,
+  });
 
   static ngTemplateContextGuard(
     directive: AnalogContentDirective,
@@ -31,7 +42,7 @@ export default class AnalogContentDirective
   }
 
   ngOnInit() {
-    this.updateContent()
+    this.updateContent();
   }
 
   ngOnChanges(): void {
@@ -39,13 +50,13 @@ export default class AnalogContentDirective
   }
 
   updateContent() {
-    this._content.pipe(take(1)).subscribe(({content, attributes}) => {
+    this.post$.pipe(take(1)).subscribe(({ content, attributes }) => {
       if (!attributes || !content) {
         return;
       }
-      this._contentRenderer.render(content).then(body => {
+      this._contentRenderer.render(content).then((body) => {
         if (!content || isEmpty(attributes)) {
-          return
+          return;
         }
         this._viewContainer.clear();
         const context: ContentWithMetadata = {
@@ -53,11 +64,11 @@ export default class AnalogContentDirective
             ...attributes,
             date: new Date(attributes['date']),
           },
-          content: this._sanitizer.bypassSecurityTrustHtml(body)
+          content: this._sanitizer.bypassSecurityTrustHtml(body),
         };
         this._viewContainer.createEmbeddedView(this._templateRef, context);
-      })
-    })
+      });
+    });
   }
 
   ngAfterViewChecked() {

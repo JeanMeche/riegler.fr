@@ -1,7 +1,7 @@
 ---
 title: "Find, debug and fix a memory leak in Angular"
 excerpt: "Know the tools to help you investigate memory leaks."
-coverImage: "blog/angular-leak/daan-mooij-91LGCVN5SAI-unsplash.jpg"
+coverImage: "src/content/posts/2023-07-20-angular-memory-leak/daan-mooij-91LGCVN5SAI-unsplash.jpg"
 date: "2023-07-20T00:00:00.000Z"
 ---
 
@@ -40,7 +40,7 @@ Playing with the toggle button whould trigger the `leave` animation every time t
 
 This can be detected with the DOM Nodes counter of the Chromium/Chrome/Edge DevTools Performance Monitor.
 
-![DOM Nodes in the Performance Monitor](/blog/angular-leak/dom-nodes.png "DOM Nodes in the Performance Monitor")
+![DOM Nodes in the Performance Monitor](/src/content/posts/2023-07-20-angular-memory-leak/dom-nodes.png "DOM Nodes in the Performance Monitor")
 
 In this illustration you can see 2 specific behaviours.
 
@@ -49,7 +49,7 @@ In this illustration you can see 2 specific behaviours.
 
 To make sure this is not the GC lagging behind, I triggered it manually from the DevTools.
 
-![Trigger the GC manually](/blog/angular-leak/performance-gc.png "Trigger the GC manually")
+![Trigger the GC manually](/src/content/posts/2023-07-20-angular-memory-leak/performance-gc.png "Trigger the GC manually")
 
 ## Finding the origin of the leak
 
@@ -61,7 +61,7 @@ You can hook it in the bottom panel next to the console to investigate Dom Nodes
 
 In our case it looks like this :
 
-![The Detached Nodes tool](/blog/angular-leak/detached-nodes.png "The Detached Nodes tool")
+![The Detached Nodes tool](/src/content/posts/2023-07-20-angular-memory-leak/detached-nodes.png "The Detached Nodes tool")
 
 The list on the bottom of the screenshot represents each detached node still in memory.
 When clicking the node ID, we get the stacktrace where this object is referenced.
@@ -70,7 +70,7 @@ This stacktrace here is quite explicit, our node is staying confortably in a Map
 
 These debugging information are also accessible in Chrome DevTools but less directly. Take a memory heap snapshot of your app, filter to search for "detached" and you'll find a similar list of detacted element in the snapshot.
 
-![Detached Element in Chrome DevTools](/blog/angular-leak/chrome-detached.png "Detached Element in Chrome DevTools")
+![Detached Element in Chrome DevTools](/src/content/posts/2023-07-20-angular-memory-leak/chrome-detached.png "Detached Element in Chrome DevTools")
 
 > 📝 Note:
 > To investigate the code source of Angular, you can enable the framework source maps in the `angular.json` settings like following :

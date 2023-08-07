@@ -1,10 +1,10 @@
 ---
 title: Requesting Strava with Azure Functions
 date: "2021-06-05"
-coverImage: "blog/strava-azure-functions/cover.png"
+coverImage: "/src/content/posts/2021-06-05-strava-azure-functions/cover.png"
 excerpt: "Strava & Azure Functions. Creating a serverless API to request an OAuth2 based API"
 ogImage:
-  url: "blog/strava-azure-functions/cover.png"
+  url: "/src/content/posts/2021-06-05-strava-azure-functions/cover.png"
 ---
 
 Few days ago, I wanted to add some Strava infos on this site using [their API](https://developers.strava.com/docs/reference/).
@@ -13,7 +13,7 @@ Quickly, I stumbled upon a major issue : Strava uses [OAuth2](https://developers
 
 Since this is a backend-less/static website I had to rely on an external provider. [Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/) had what I was looking for : A Timer Triggered functions (cron-like).
 
-![logos](blog/strava-azure-functions/logos.png)
+![logos](/src/content/posts/2021-06-05-strava-azure-functions/logos.png)
 
 ## A First Function : Refresh the tokens
 
@@ -133,7 +133,7 @@ As you probably don't missed, this only works when there is initial data in the 
 
 I used [Microsoft Azure Storage Explorer](https://azure.microsoft.com/fr-fr/features/storage-explorer/) to initially put the data in the table
 
-![Screenshot of Azure Storage Explorer](/blog/strava-azure-functions/azure-storage-explorer.png "Screenshot of Azure Storage Explorer")
+![Screenshot of Azure Storage Explorer](src/content/posts/2021-06-05-strava-azure-functions/azure-storage-explorer.png "Screenshot of Azure Storage Explorer")
 
 I also went on writing 2 others functions for backup reasons :
 
