@@ -42,7 +42,7 @@ function parseDetailResponse(sportDetail: API_StravaSportDetail): StravaDetail {
   return {
     activityId: sportDetail.id,
     activityName: sportDetail.name,
-    distance: (sportDetail.distance / 1000).toFixed(0),
+    distance: (sportDetail.year_to_date_total_distance / 1000).toFixed(0),
     duration: humanDuration(sportDetail.moving_time),
     percentage:
       (sportDetail.year_to_date_total_distance / sportDetail.totalTarget) * 100,
