@@ -26,7 +26,7 @@ export default defineConfig(() => {
         structured: true,
         targets: [
           {
-            src: ['src/content/posts/**/*.png', 'src/content/posts/**/*.jpg'],
+            src: ['src/content/**/*.png', 'src/content/**/*.jpg'],
             dest: '',
           },
         ],
