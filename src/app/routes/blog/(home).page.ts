@@ -31,7 +31,9 @@ import { PageHeaderComponent } from '../../components/layout/page-header/page-he
   `,
 })
 export default class BlogComponent {
-  public blogArticles = [...injectContentFiles<ContentMetadata>()].sort(
-    (a1, a2) => (a1.attributes.date > a2.attributes.date ? -1 : 1)
-  );
+  public blogArticles = [
+    ...injectContentFiles<ContentMetadata>((contentFile) =>
+      contentFile.filename.includes('/src/content/posts')
+    ),
+  ].sort((a1, a2) => (a1.attributes.date > a2.attributes.date ? -1 : 1));
 }

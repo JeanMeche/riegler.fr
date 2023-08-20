@@ -76,7 +76,9 @@ import { StravaComponent } from '../components/strava/strava.component';
   `,
 })
 export default class HomeComponent {
-  public blogArticles = injectContentFiles<ContentMetadata>()
+  public blogArticles = injectContentFiles<ContentMetadata>((contentFile) =>
+    contentFile.filename.includes('/src/content/posts')
+  )
     .sort((a1, a2) => (a1.attributes.date > a2.attributes.date ? -1 : 1))
     .slice(0, 4);
 }
