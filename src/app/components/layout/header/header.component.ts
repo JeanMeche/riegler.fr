@@ -86,7 +86,7 @@ const twMobileNavLinkClasses = `text-md text-zinc-700 dark:text-zinc-400 transit
         <div class="flex flex-col space-y-4">
           <a class="${twMobileNavLinkClasses}" routerLink="/">Home</a>
           <a class="${twMobileNavLinkClasses}" routerLink="/blog">Blog</a>
-          <a class="${twMobileNavLinkClasses}" routerLink="/cyling">cyling</a>
+          <a class="${twMobileNavLinkClasses}" routerLink="/cyling">Cyling</a>
           <button
             class="${twIconBtnClasses}"
             (click)="toggleThemeClicked.emit()"
