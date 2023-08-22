@@ -17,8 +17,7 @@ module.exports = {
                 content: "none",
               },
               code: {
-                color: theme("colors.stone.100"),
-                backgroundColor: theme("colors.slate.500"),
+                backgroundColor: "var(--tw-prose-pre-bg)",
                 borderRadius: theme("borderRadius.DEFAULT"),
                 paddingLeft: theme("spacing[1.5]"),
                 paddingRight: theme("spacing[1.5]"),
@@ -27,6 +26,14 @@ module.exports = {
               },
               img: {
                 borderRadius: theme("borderRadius.DEFAULT"),
+              },
+            },
+          },
+          dark: {
+            css: {
+              code: {
+                color: theme("colors.red.800"),
+                backgroundColor: theme("colors.red.900"),
               },
             },
           },

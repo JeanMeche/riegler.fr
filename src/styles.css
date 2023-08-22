@@ -85,7 +85,7 @@ pre {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  background: #18181b;
+  /*  background: #18181b;  */
   color: #ffffff;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* this is the default */
   /* The following properties are standard, please leave them as they are */
@@ -214,5 +214,28 @@ pre[class*="language-"] {
 .prose {
   p > img {
     margin: auto;
+  }
+
+  pre {
+    margin-top: 0;
+  }
+
+  h4 {
+    margin-bottom: 0;
+
+    code {
+      color: var(--tw-prose-pre-code);
+      font-family: inherit;
+      padding: 8px 32px;
+      display: inline-block;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      font-size: 0.8rem;
+    }
+  }
+
+  h4 + pre {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
