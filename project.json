@@ -1,0 +1,59 @@
+{
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "name": "my-app",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "sourcemap": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "options": {
+        "configFile": "vite.config.ts",
+        "main": "src/main.ts",
+        "outputPath": "dist/client"
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "configurations": {
+        "development": {
+          "buildTarget": "my-app:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "my-app:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "my-app:build",
+        "port": 5173
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "options": {
+        "config": "vite.config.ts"
+      }
+    }
+  },
+  "prefix": "app",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "flat": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "skipTests": true,
+      "standalone": true
+    }
+  },
+  "sourceRoot": "src"
+}
