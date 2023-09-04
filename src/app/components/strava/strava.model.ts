@@ -47,7 +47,8 @@ function parseDetailResponse(sportDetail: API_StravaSportDetail): StravaDetail {
     percentage:
       (sportDetail.year_to_date_total_distance / sportDetail.totalTarget) * 100,
     photoUrl: sportDetail.photoUrl,
-    totalTarget: sportDetail.totalTarget,
+    totalTarget: sportDetail.totalTarget / 1000,
+    totalDistance: (sportDetail.year_to_date_total_distance / 1000).toFixed(0),
   };
 }
 
@@ -70,4 +71,5 @@ export interface StravaDetail {
   activityName: string;
   photoUrl?: string;
   totalTarget: number;
+  totalDistance: string;
 }

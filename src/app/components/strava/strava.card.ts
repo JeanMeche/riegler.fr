@@ -46,10 +46,10 @@ import { StravaDetail } from './strava.model';
         <h4 class="text-orange-500 mb-2">Year-to-date stats</h4>
 
         <p class="">
-          Distance: {{ sportDetail.distance }}
+          Distance: {{ sportDetail.totalDistance }}
           km
         </p>
-        <p class="">Goal: {{ sportDetail.totalTarget / 1000 }} km</p>
+        <p class="">Goal: {{ sportDetail.totalTarget }} km</p>
         <p class="mb-3">Progress</p>
 
         <div class="bg-gray-200 dark:bg-gray-600 rounded-lg">
