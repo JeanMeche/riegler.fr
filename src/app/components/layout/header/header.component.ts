@@ -1,19 +1,16 @@
-import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Output,
-  ViewEncapsulation,
-} from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { HeaderNavLinkComponent } from './header-nav/header-nav-link/header-nav-link.component';
-import { HeaderNavComponent } from './header-nav/header-nav.component';
+import {CommonModule} from '@angular/common';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output, ViewEncapsulation,} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {BehaviorSubject} from 'rxjs';
 
-const twIconBtnClasses = `inline-flex justify-center rounded-full border-transparent border p-1.5 outline-2 outline-offset-2 transition-colors hover:border-zinc-300 text-zinc-700 hover:border-zinc-400 active:bg-zinc-100 active:text-zinc-700/80`;
+import {HeaderNavLinkComponent} from './header-nav/header-nav-link/header-nav-link.component';
+import {HeaderNavComponent} from './header-nav/header-nav.component';
+
+const twIconBtnClasses =
+    `inline-flex justify-center rounded-full border-transparent border p-1.5 outline-2 outline-offset-2 transition-colors hover:border-zinc-300 text-zinc-700 hover:border-zinc-400 active:bg-zinc-100 active:text-zinc-700/80`;
 const twIconClasses = `w-5 h-5 dark:text-white text-zinc-800`;
-const twMobileNavLinkClasses = `text-md text-zinc-700 dark:text-zinc-400 transition-colors delay-150 hover:text-zinc-900 dark:hover:text-zinc-50 hover:delay-[0ms]`;
+const twMobileNavLinkClasses =
+    `text-md text-zinc-700 dark:text-zinc-400 transition-colors delay-150 hover:text-zinc-900 dark:hover:text-zinc-50 hover:delay-[0ms]`;
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -86,7 +83,7 @@ const twMobileNavLinkClasses = `text-md text-zinc-700 dark:text-zinc-400 transit
         <div class="flex flex-col space-y-4">
           <a class="${twMobileNavLinkClasses}" routerLink="/">Home</a>
           <a class="${twMobileNavLinkClasses}" routerLink="/blog">Blog</a>
-          <a class="${twMobileNavLinkClasses}" routerLink="/cyling">Cyling</a>
+          <a class="${twMobileNavLinkClasses}" routerLink="/cycling">Cycling</a>
           <button
             class="${twIconBtnClasses}"
             (click)="toggleThemeClicked.emit()"
@@ -116,11 +113,9 @@ const twMobileNavLinkClasses = `text-md text-zinc-700 dark:text-zinc-400 transit
 export class HeaderComponent {
   private _showMobileNav$ = new BehaviorSubject(false);
   public showMobileNav$ = this._showMobileNav$.asObservable();
-  @Output()
-  public toggleThemeClicked = new EventEmitter<void>();
+  @Output() public toggleThemeClicked = new EventEmitter<void>();
 
   public toggleMobileNav(): void {
-    console.log('toggling nav');
     this._showMobileNav$.next(!this._showMobileNav$.getValue());
   }
   public closeMobileNav(): void {
