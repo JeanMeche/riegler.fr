@@ -239,3 +239,15 @@ pre[class*="language-"] {
     border-top-right-radius: 0;
   }
 }
+
+.warning {
+  border-left: 4px;
+  background: color(srgb 0.983514 0.726174 0.797722 / 0.1);
+  padding: 12px;
+  border-left: 4px solid #fb7185;
+
+  &:before {
+    content: "⚠️";
+    margin-right: 8px;
+  }
+}

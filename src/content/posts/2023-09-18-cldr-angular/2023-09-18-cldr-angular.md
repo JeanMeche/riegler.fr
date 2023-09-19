@@ -13,7 +13,7 @@ You import the locale and setup the locale provider.
 
 #### **`main.ts`**
 
-```
+```ts
 import '@angular/common/locales/global/fr';
 bootstrapApplication(App, {providers: [{provide: LOCALE_ID, useValue: 'fr'}]});
 ```
@@ -22,7 +22,7 @@ And the pipes will use that locale for you
 
 #### **`my.component.html`**
 
-```
+```html
   {{ date | date: 'dd MMMM yyyy'}} // 16 septembre 2023 (at the time of writing)
   {{ 35.50 | currency }} // 35,50 $US
   {{ 300_000_000 | number }} // 300 000 000
@@ -49,7 +49,7 @@ As of the v44 of the CLDR, you can see that the repo has support for over 600 lo
 
 #### **`fr/numbers.json`**
 
-```
+```json
     "symbols-numberSystem-latn": {
         "decimal": ",",
         "group": " ",
@@ -80,7 +80,7 @@ A short example with the [korean dates](https://github.com/unicode-org/cldr-json
 
 #### **`ko/ca-gregorian.json`**
 
-```
+```json
 "months": {
     "format": {
         "wide": {
@@ -126,7 +126,7 @@ A short example with the [korean dates](https://github.com/unicode-org/cldr-json
 
 #### **`en/ca-gregorian.json`**
 
-```
+```json
 "months": {
     "format": {
         "wide": {
@@ -178,7 +178,7 @@ the currency history for each country. If we take the example of Cuba, the US Do
 
 #### **`supplemental/currencyData.json`**
 
-```
+```json
     "CU": [
         {
         "CUP": {
@@ -208,7 +208,7 @@ Now that we know the existance of the CLDR, we can check ourselves the info at [
 
 #### **`it/currencies.json`**
 
-```
+```json
     "USD": {
     "displayName": "dollaro statunitense",
     "displayName-count-one": "dollaro statunitense",
@@ -235,7 +235,7 @@ This information is located in the [gregorian calendar data](https://github.com/
 
 #### **`es/ca-gregorian.json`**
 
-```
+```json
 "abbreviated": {
     "1": "ene",
     "2": "feb",
@@ -257,7 +257,7 @@ This information is located in the [gregorian calendar data](https://github.com/
 
 #### **`fr/ca-gregorian.json`**
 
-```
+```json
 "abbreviated": {
     "1": "janv.",
     "2": "févr.",
@@ -289,7 +289,7 @@ On the last case that will have our interest today, a user reported, on issue [#
 
 Again, let's check the [CLDR number data](https://github.com/unicode-org/cldr-json/blob/f93780d69dbd62550cd0a3eb64aa3c73b2c45e91/cldr-json/cldr-numbers-full/main/de-CH/numbers.json#L97-L110) :
 
-```
+```json
 "currencyFormats-numberSystem-latn": {
     "standard": "¤ #,##0.00;¤-#,##0.00",
 }
