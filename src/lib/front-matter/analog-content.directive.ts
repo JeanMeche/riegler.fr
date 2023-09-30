@@ -65,6 +65,7 @@ export default class AnalogContentDirective
             ...attributes,
             date: new Date(attributes['date']),
           },
+          headings: this._contentRenderer.getContentHeadings().filter((h) => h.level < 4),
           content: this._sanitizer.bypassSecurityTrustHtml(body),
         };
         this._viewContainer.createEmbeddedView(this._templateRef, context);
@@ -88,7 +89,6 @@ export default class AnalogContentDirective
   }
 
   ngOnDestroy() {
-    console.log('alal');
     this._meta.removeTag('property="og:title"');
     this._meta.removeTag('property="og:description"');
     this._meta.removeTag('property="og:image"');

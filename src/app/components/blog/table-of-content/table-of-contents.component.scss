@@ -1,0 +1,61 @@
+:host {
+  flex-direction: column;
+  height: fit-content;
+  width: 14rem;
+  padding-inline: 1rem;
+  overflow: auto;
+  max-height: 100vh;
+
+  @media only screen and (max-width: 1430px) {
+    display: none;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-block-start: 8px;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.docs-toc-item {
+  font-size: 0.875rem;
+  border-inline-start: 1px solid #7e7788;
+  border-inline-start-width: 2px !important;
+  background: transparent;
+
+  &.docs-toc-item-h3 {
+    a {
+      padding-inline-start: 2rem;
+    }
+  }
+
+  a {
+    display: inline-block; // to prevent overflow from the li parent
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    color: var(--quaternary-contrast);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    a {
+      color: var(--primary-contrast);
+    }
+
+    border-inline-start: 1px solid rgb(207, 207, 207);
+  }
+}
+
+.docs-toc-item-active {
+  border: 0;
+  border-inline-start-width: 2px !important;
+  border-style: solid;
+  border-inline-start: 2px solid rgb(59, 130, 246);
+  color: rgb(59, 130, 246);
+  max-width: max-content;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}

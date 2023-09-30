@@ -22,6 +22,7 @@
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 /*
   Typographic tweaks!
@@ -83,11 +84,11 @@ pre {
  * Ported for PrismJS by Simon Jespersen [https://github.com/simjes]
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   /*  background: #18181b;  */
   color: #ffffff;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* this is the default */
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* this is the default */
   /* The following properties are standard, please leave them as they are */
   font-size: 0.9em;
   direction: ltr;
@@ -106,24 +107,24 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection,
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection {
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection {
   background: #27272a;
   color: inherit;
 }
 
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection,
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection {
+code[class*='language-']::selection,
+code[class*='language-'] ::selection,
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
   background: #27272a;
   color: inherit;
 }
 
 /* Properties specific to code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1em; /* this is standard */
   margin: 0.5em 0; /* this is the default */
   overflow: auto; /* this is standard */
@@ -131,7 +132,7 @@ pre[class*="language-"] {
 }
 
 /* Properties specific to inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.2em 0.3em;
   border-radius: 0.5rem;
   white-space: normal; /* this is standard */
@@ -247,7 +248,7 @@ pre[class*="language-"] {
   border-left: 4px solid #fb7185;
 
   &:before {
-    content: "⚠️";
+    content: '⚠️';
     margin-right: 8px;
   }
 }

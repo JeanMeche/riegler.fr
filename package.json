@@ -15,8 +15,8 @@
     "serve": "http-server ./dist/analog/public"
   },
   "dependencies": {
-    "@analogjs/content": "0.2.0",
-    "@analogjs/router": "0.2.0",
+    "@analogjs/content": "0.2.9",
+    "@analogjs/router": "0.2.9",
     "@angular/animations": "16.2.2",
     "@angular/common": "16.2.2",
     "@angular/compiler": "16.2.2",
@@ -29,17 +29,17 @@
     "front-matter": "^4.0.2",
     "ftp-deploy": "^2.4.4",
     "marked": "^5.1.1",
-    "marked-gfm-heading-id": "^3.0.4",
+    "marked-gfm-heading-id": "3.1.0",
     "marked-highlight": "^2.0.1",
     "prismjs": "^1.29.0",
     "rxjs": "~7.5.6",
     "tslib": "^2.4.0",
     "vite-plugin-static-copy": "^0.17.0",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.13.3"
   },
   "devDependencies": {
-    "@analogjs/platform": "0.2.0",
-    "@analogjs/vite-plugin-angular": "0.2.0",
+    "@analogjs/platform": "0.2.9",
+    "@analogjs/vite-plugin-angular": "0.2.9",
     "@angular-devkit/build-angular": "16.2.0",
     "@angular-devkit/core": "16.2.0",
     "@angular-devkit/schematics": "16.2.0",
@@ -57,7 +57,7 @@
     "nx": "16.7.4",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.1",
-    "typescript": "^5.1.0",
+    "typescript": "5.1.6",
     "vite": "^4.3.9",
     "vitest": "^0.32.0"
   }
