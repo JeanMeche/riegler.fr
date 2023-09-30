@@ -3,14 +3,16 @@ import {
   AfterViewChecked,
   Directive,
   OnChanges,
+  OnDestroy,
   OnInit,
   TemplateRef,
   ViewContainerRef,
   inject,
 } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Meta } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
+
 import {
   ContentMetadata,
   ContentWithMetadata,
@@ -22,13 +24,15 @@ import { isEmpty } from '../util/is-empty';
   standalone: true,
 })
 export default class AnalogContentDirective
-  implements OnInit, OnChanges, AfterViewChecked
+  implements OnInit, OnChanges, AfterViewChecked, OnDestroy
 {
   private _templateRef = inject(TemplateRef<any>);
   private _viewContainer = inject(ViewContainerRef);
   private _sanitizer = inject(DomSanitizer);
   private _contentRenderer = inject(ContentRenderer);
+  private _meta = inject(Meta);
   readonly route = inject(ActivatedRoute);
+
   readonly post$ = injectContent<ContentMetadata>({
     param: 'slug',
     subdirectory: `posts/${this.route.snapshot.paramMap.get('slug')}`,
@@ -67,11 +71,31 @@ export default class AnalogContentDirective
           content: this._sanitizer.bypassSecurityTrustHtml(body),
         };
         this._viewContainer.createEmbeddedView(this._templateRef, context);
+
+        this._meta.updateTag({
+          property: 'og:title',
+          content: attributes.title,
+        });
+        this._meta.updateTag({
+          property: 'og:description',
+          content: attributes.excerpt,
+        });
+        this._meta.updateTag({
+          property: 'og:image',
+          content: attributes.coverImage,
+        });
       });
     });
   }
 
   ngAfterViewChecked() {
     this._contentRenderer.enhance();
+  }
+
+  ngOnDestroy() {
+    console.log('alal');
+    this._meta.removeTag('property="og:title"');
+    this._meta.removeTag('property="og:description"');
+    this._meta.removeTag('property="og:image"');
   }
 }
