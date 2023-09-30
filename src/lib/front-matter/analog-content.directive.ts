@@ -72,7 +72,10 @@ export default class AnalogContentDirective
         this._meta.updateTag({property: 'og:type', content: 'website'});
         this._meta.updateTag({property: 'og:title', content: attributes.title});
         this._meta.updateTag({property: 'og:description', content: attributes.excerpt});
-        this._meta.updateTag({property: 'og:image', content: attributes.coverImage});
+        this._meta.updateTag({
+          property: 'og:image',
+          content: `https://riegler.fr/${attributes.coverImage}`,
+        });
 
         this._meta.updateTag({name: 'twitter:card', content: 'summary'});
         this._meta.updateTag({name: 'twitter:creator', content: '@jean__meche'});
