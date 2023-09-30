@@ -1,4 +1,4 @@
-import { ContentRenderer, injectContent } from '@analogjs/content';
+import {ContentRenderer, injectContent} from '@analogjs/content';
 import {
   AfterViewChecked,
   Directive,
@@ -9,15 +9,12 @@ import {
   ViewContainerRef,
   inject,
 } from '@angular/core';
-import { DomSanitizer, Meta } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs';
+import {DomSanitizer, Meta} from '@angular/platform-browser';
+import {ActivatedRoute} from '@angular/router';
+import {take} from 'rxjs';
 
-import {
-  ContentMetadata,
-  ContentWithMetadata,
-} from '../content-metadata/content-metadata';
-import { isEmpty } from '../util/is-empty';
+import {ContentMetadata, ContentWithMetadata} from '../content-metadata/content-metadata';
+import {isEmpty} from '../util/is-empty';
 
 @Directive({
   selector: '[analogContent]',
@@ -40,7 +37,7 @@ export default class AnalogContentDirective
 
   static ngTemplateContextGuard(
     directive: AnalogContentDirective,
-    context: unknown
+    context: unknown,
   ): context is ContentWithMetadata {
     return true;
   }
@@ -54,7 +51,7 @@ export default class AnalogContentDirective
   }
 
   updateContent() {
-    this.post$.pipe(take(1)).subscribe(({ content, attributes }) => {
+    this.post$.pipe(take(1)).subscribe(({content, attributes}) => {
       if (!attributes || !content) {
         return;
       }
@@ -72,18 +69,13 @@ export default class AnalogContentDirective
         };
         this._viewContainer.createEmbeddedView(this._templateRef, context);
 
-        this._meta.updateTag({
-          property: 'og:title',
-          content: attributes.title,
-        });
-        this._meta.updateTag({
-          property: 'og:description',
-          content: attributes.excerpt,
-        });
-        this._meta.updateTag({
-          property: 'og:image',
-          content: attributes.coverImage,
-        });
+        this._meta.updateTag({property: 'og:type', content: 'website'});
+        this._meta.updateTag({property: 'og:title', content: attributes.title});
+        this._meta.updateTag({property: 'og:description', content: attributes.excerpt});
+        this._meta.updateTag({property: 'og:image', content: attributes.coverImage});
+
+        this._meta.updateTag({name: 'twitter:card', content: 'summary'});
+        this._meta.updateTag({name: 'twitter:creator', content: '@jean__meche'});
       });
     });
   }
