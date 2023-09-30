@@ -1,6 +1,6 @@
 ---
-title: "Lazy loading a service in Angular with tests in mind"
-excerpt: "We should be able to mock what we load"
+title: "Lazy loading your services in Angular with tests in mind"
+excerpt: "We should be able to mock what we lazy-load"
 coverImage: "src/content/posts/2023-09-30-lazy-loading-mockable/injector.jpg"
 date: "2023-09-30T00:00:00.000Z"
 ---
