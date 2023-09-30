@@ -1,0 +1,17 @@
+{
+  // Default state for all rules
+  "default": true,
+  // MD001/heading-increment/header-increment
+  "MD001": false,
+  // MD013/line-length - Line length
+  "MD013": {
+    // Number of characters
+    "line_length": 750,
+    // Include code blocks
+    "code_blocks": false,
+    // Include tables
+    "tables": false
+  },
+  // MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content
+  "MD024": false
+}
