@@ -5,11 +5,11 @@ coverImage: "src/content/posts/2023-09-30-lazy-loading-mockable/injector.jpg"
 date: "2023-09-30T00:00:00.000Z"
 ---
 
-Bundle size is a critical subject when bulding a SPA. The bigger it is, the longer it will take to start the app.
-Framework and developers have been relying more and more on lazy-loading to delay loading of non necessary code. The most common one are lazy-loaded routes.
+Bundle size is a critical subject when building a SPA. The bigger it is, the longer it will take to start the app.
+Framework and developers have been relying more and more on lazy-loading to delay loading of non necessary code. The most common ones are lazy-loaded routes.
 
 When it comes to services, we can lazy load it by using a dynamic `import()`.
-Let's take as example a situation where a page displays a heavy WebGL animation that we want to lazy load.
+Let's take as an example a situation where a page displays a heavy WebGL animation that we want to lazy-load.
 
 We suppose that `HomeAnimation` is a Angular service with `Injectable({providedIn: 'root'})`.
 
@@ -27,11 +27,11 @@ class HomeComponent {
 }
 ```
 
-This is really straight forward but it has a major downside : This doesn't allow us to use a mock service in unit tests.
+This is really straightforward but it has a major downside : This doesn't allow us to use a mock service in unit tests.
 
 ## Leverage dependency injection
 
-DI is a powerfull tool, we will leverage it here to create/share instances and to help on testing.
+DI is a powerful tool, we will leverage it here to create/share instances and to help on testing.
 
 First let's start with this helper function.
 
@@ -197,11 +197,11 @@ export class HomeComponent {
 ```
 
 It is important here that the injector is a `NodeInjector` and not the `EnvironmentInjector`.
-The former will be detroyed with the component while the latter will survive the component.
+The former will be destroyed with the component while the latter will survive the component.
 
 ## Final implementation
 
-Here is our final implentation of the `inject-async.ts` helper functions.
+Here is our final implementation of the `inject-async.ts` helper functions.
 
 ```ts
 import {createEnvironmentInjector, DestroyRef, ENVIRONMENT_INITIALIZER, EnvironmentInjector, inject, Injectable, Injector, Provider, ProviderToken, Type,} from '@angular/core';
@@ -209,7 +209,7 @@ import {createEnvironmentInjector, DestroyRef, ENVIRONMENT_INITIALIZER, Environm
 /**
  * inject a service asynchronously
  *
- * @param: injector. If the injector is a NodeInjector the loaded module will be destroyed alonside its injector
+ * @param: injector. If the injector is a NodeInjector the loaded module will be destroyed alongside its injector
  */
 export async function injectAsync<T>(
   injector: Injector,
