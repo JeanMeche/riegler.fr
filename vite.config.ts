@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
 import analog from '@analogjs/platform';
-import { defineConfig } from 'vite';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
-import { getBlogPosts } from './vite-prerender.utils';
+import {defineConfig} from 'vite';
+import {viteStaticCopy} from 'vite-plugin-static-copy';
+import {getBlogPosts} from './vite-prerender.utils';
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -19,7 +19,7 @@ export default defineConfig(() => {
         static: true,
         prerender: {
           discover: true,
-          routes: async () => ['/', '/blog', '/cv', '/test', ...getBlogPosts()],
+          routes: async () => ['/', '/blog', '/cv', '/test', '/api/rss.xml', ...getBlogPosts()],
         },
       }),
       viteStaticCopy({
