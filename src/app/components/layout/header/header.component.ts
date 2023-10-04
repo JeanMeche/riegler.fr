@@ -48,6 +48,12 @@ const twMobileNavLinkClasses =
             </svg>
           </button>
         </div>
+        <a
+          class="inline-flex justify-center rounded-full border-transparent border p-1.5 outline-2 outline-offset-2 transition-colors text-zinc-700 dark:text-zinc-100 hover:border-zinc-300 active:bg-zinc-100 active:text-zinc-700/80 lg:block"
+          href="/api/rss.xml"
+        >
+
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor"><path d="M215.788-144Q186-144 165-165.212q-21-21.213-21-51Q144-246 165.212-267q21.213-21 51-21Q246-288 267-266.788q21 21.213 21 51Q288-186 266.788-165q-21.213 21-51 21ZM720-144q0-120-45.257-224.479-45.257-104.478-123.429-182.708-78.171-78.231-182.571-123.522Q264.343-720 144-720v-96q140 0 261.628 52.376 121.629 52.377 213.591 144.283 91.963 91.906 144.372 213.459Q816-284.329 816-144h-96Zm-240 0q0-70-26-131t-72-107q-46-46-107-72t-131-26v-96q90.521 0 168.743 33.698Q390.965-508.605 450-450q58.605 59.035 92.302 137.257Q576-234.521 576-144h-96Z"/></svg>        </a>
         <button
           class="inline-flex justify-center rounded-full border-transparent border p-1.5 outline-2 outline-offset-2 transition-colors hover:border-zinc-300 text-zinc-700 active:bg-zinc-100 active:text-zinc-700/80 lg:block"
           (click)="toggleThemeClicked.emit()"
