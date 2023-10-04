@@ -19,7 +19,7 @@ import { StravaData, fetchStravaData } from './strava.model';
         />
         <app-strava-card
           [sportDetail]="this.stravaData.run"
-          label="Latest run of Strava"
+          label="Latest run on Strava"
         />
       </ng-container>
     </div>
