@@ -33,7 +33,7 @@ Et voilà, we just made a synchronous API compatible with asynchronous loading.
 
 This API is available starting from `17.0.0-next.7`.
 
-To enable the lazy-loading of the animation package, you will have to setup the providers by calling `provideAnimationsAsync()` from `@angular/animations/async` instead of `provideAnimations()`. It accepts an optional argument to use noop animations.
+To enable the lazy-loading of the animation package, you will have to setup the providers by calling `provideAnimationsAsync()` from `@angular/platform-browser/animations/async` instead of `provideAnimations()`. It accepts an optional argument to use noop animations.
 
 #### **`main.ts`**
 
