@@ -3,12 +3,13 @@ import {provideFileRouter} from '@analogjs/router';
 import {bootstrapApplication} from '@angular/platform-browser';
 import 'zone.js';
 
-import {withInMemoryScrolling} from '@angular/router';
+import {withInMemoryScrolling, withViewTransitions} from '@angular/router';
 import {AppComponent} from './app/app.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideFileRouter(
+      withViewTransitions(),
       withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'}),
     ),
     provideContent(withMarkdownRenderer()),
