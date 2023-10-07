@@ -4,6 +4,7 @@ import {enableProdMode} from '@angular/core';
 import {renderApplication} from '@angular/platform-server';
 import {withEnabledBlockingInitialNavigation} from '@angular/router';
 import 'zone.js/node';
+import 'prismjs/components/prism-coffeescript';
 
 import {bootstrapApplication} from '@angular/platform-browser';
 import {AppComponent} from './app/app.component';
