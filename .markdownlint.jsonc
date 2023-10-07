@@ -13,5 +13,7 @@
     "tables": false
   },
   // MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content
-  "MD024": false
+  "MD024": false,
+  // MD033/no-inline-html - Inline HTML
+  "MD033": false
 }
