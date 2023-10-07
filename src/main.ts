@@ -11,6 +11,7 @@ import 'prismjs/components/prism-cshtml';
 bootstrapApplication(AppComponent, {
   providers: [
     provideFileRouter(
+      withViewTransitions(),
       withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'}),
       withViewTransitions(),
     ),
