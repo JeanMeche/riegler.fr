@@ -80,7 +80,7 @@ export class OpenCloseComponent {
 ```
 
 In the example, the `DomRenderer` isn't able to apply the initial style, which should be `background: chartreuse`.
-It isn't until the `AnimationRenderer` is picked up by the `DynamicDelegationRenderer` and an animation is triggered that the style would be updated to the expected color.
+It isn't until the `AnimationRenderer` is picked up by the `DynamicDelegationRenderer` that the style would be updated to the expected color.
 
 ### lazy-loading & code splitting
 
