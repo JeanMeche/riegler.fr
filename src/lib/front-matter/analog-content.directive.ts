@@ -1,15 +1,6 @@
 import {ContentRenderer, injectContent} from '@analogjs/content';
-import {
-  AfterViewChecked,
-  Directive,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  TemplateRef,
-  ViewContainerRef,
-  inject,
-} from '@angular/core';
-import {DomSanitizer, Meta} from '@angular/platform-browser';
+import {AfterViewChecked, Directive, inject, OnChanges, OnDestroy, OnInit, TemplateRef, ViewContainerRef,} from '@angular/core';
+import {DomSanitizer, Meta, Title} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
 import {take} from 'rxjs';
 
@@ -20,14 +11,15 @@ import {isEmpty} from '../util/is-empty';
   selector: '[analogContent]',
   standalone: true,
 })
-export default class AnalogContentDirective
-  implements OnInit, OnChanges, AfterViewChecked, OnDestroy
-{
+export default class AnalogContentDirective implements OnInit, OnChanges,
+                                                       AfterViewChecked,
+                                                       OnDestroy {
   private _templateRef = inject(TemplateRef<any>);
   private _viewContainer = inject(ViewContainerRef);
   private _sanitizer = inject(DomSanitizer);
   private _contentRenderer = inject(ContentRenderer);
   private _meta = inject(Meta);
+  private _title = inject(Title);
   readonly route = inject(ActivatedRoute);
 
   readonly post$ = injectContent<ContentMetadata>({
@@ -36,9 +28,9 @@ export default class AnalogContentDirective
   });
 
   static ngTemplateContextGuard(
-    directive: AnalogContentDirective,
-    context: unknown,
-  ): context is ContentWithMetadata {
+      directive: AnalogContentDirective,
+      context: unknown,
+      ): context is ContentWithMetadata {
     return true;
   }
 
@@ -65,21 +57,25 @@ export default class AnalogContentDirective
             ...attributes,
             date: new Date(attributes['date']),
           },
-          headings: this._contentRenderer.getContentHeadings().filter((h) => h.level < 4),
+          headings: this._contentRenderer.getContentHeadings().filter(
+              (h) => h.level < 4),
           content: this._sanitizer.bypassSecurityTrustHtml(body),
         };
         this._viewContainer.createEmbeddedView(this._templateRef, context);
 
+        this._title.setTitle(`${attributes.title} | blog | Matthieu Riegler`);
         this._meta.updateTag({property: 'og:type', content: 'website'});
         this._meta.updateTag({property: 'og:title', content: attributes.title});
-        this._meta.updateTag({property: 'og:description', content: attributes.excerpt});
+        this._meta.updateTag(
+            {property: 'og:description', content: attributes.excerpt});
         this._meta.updateTag({
           property: 'og:image',
           content: `https://riegler.fr/${attributes.coverImage}`,
         });
 
         this._meta.updateTag({name: 'twitter:card', content: 'summary'});
-        this._meta.updateTag({name: 'twitter:creator', content: '@jean__meche'});
+        this._meta.updateTag(
+            {name: 'twitter:creator', content: '@jean__meche'});
       });
     });
   }
