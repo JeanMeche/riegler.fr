@@ -16,8 +16,11 @@ module.exports = {
               'code::after': {
                 content: 'none',
               },
+              'a code': {
+                'text-decoration': 'underline',
+              },
               code: {
-                color: 'var(--tw-prose-pre-code)',
+                color: 'var(--tw-prose-pre-code) !important',
                 backgroundColor: 'var(--tw-prose-pre-bg)',
                 borderRadius: theme('borderRadius.DEFAULT'),
                 paddingLeft: theme('spacing[1.5]'),
