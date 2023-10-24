@@ -1,8 +1,10 @@
 import {ContentRenderer, injectContent} from '@analogjs/content';
-import {AfterViewChecked, Directive, inject, OnChanges, OnDestroy, OnInit, TemplateRef, ViewContainerRef,} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
+import {AfterViewChecked, Directive, inject, NgZone, OnChanges, OnDestroy, OnInit, PLATFORM_ID, TemplateRef, ViewContainerRef,} from '@angular/core';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {DomSanitizer, Meta, Title} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
-import {take} from 'rxjs';
+import {from, take} from 'rxjs';
 
 import {ContentMetadata, ContentWithMetadata} from '../content-metadata/content-metadata';
 import {isEmpty} from '../util/is-empty';
@@ -21,6 +23,10 @@ export default class AnalogContentDirective implements OnInit, OnChanges,
   private _meta = inject(Meta);
   private _title = inject(Title);
   readonly route = inject(ActivatedRoute);
+  private readonly platformId = inject(PLATFORM_ID);
+  private zone = inject(NgZone);
+
+  static mermaid: any;
 
   readonly post$ = injectContent<ContentMetadata>({
     param: 'slug',
@@ -32,6 +38,12 @@ export default class AnalogContentDirective implements OnInit, OnChanges,
       context: unknown,
       ): context is ContentWithMetadata {
     return true;
+  }
+
+  constructor() {
+    if (isPlatformBrowser(this.platformId) && !AnalogContentDirective.mermaid) {
+      this.loadMermaid()
+    }
   }
 
   ngOnInit() {
@@ -82,11 +94,31 @@ export default class AnalogContentDirective implements OnInit, OnChanges,
 
   ngAfterViewChecked() {
     this._contentRenderer.enhance();
+    this.zone.runOutsideAngular(
+        () => AnalogContentDirective.mermaid?.default.run());
   }
 
   ngOnDestroy() {
     this._meta.removeTag('property="og:title"');
     this._meta.removeTag('property="og:description"');
     this._meta.removeTag('property="og:image"');
+  }
+
+  private loadMermaid() {
+    this.zone.runOutsideAngular(
+        () =>
+            // Wrap into an observable to avoid redundant initialization once
+            // the markdown component is destroyed before the promise is
+            // resolved.
+        from(import('mermaid'))
+            .pipe(takeUntilDestroyed())
+            .subscribe((mermaid) => {
+              console.log('lala');
+              AnalogContentDirective.mermaid = mermaid;
+              mermaid.default.initialize({startOnLoad: false});
+              // Explicitly running mermaid as ngAfterViewChecked
+              // has probably already been called
+              mermaid?.default.run();
+            }));
   }
 }
