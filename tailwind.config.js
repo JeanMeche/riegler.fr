@@ -31,6 +31,10 @@ module.exports = {
               img: {
                 borderRadius: theme('borderRadius.DEFAULT'),
               },
+              '.mermaid': {
+                display: 'flex',
+                'justify-content': 'center',
+              },
             },
           },
           dark: {

@@ -113,7 +113,6 @@ export default class AnalogContentDirective implements OnInit, OnChanges,
         from(import('mermaid'))
             .pipe(takeUntilDestroyed())
             .subscribe((mermaid) => {
-              console.log('lala');
               AnalogContentDirective.mermaid = mermaid;
               mermaid.default.initialize({startOnLoad: false});
               // Explicitly running mermaid as ngAfterViewChecked
