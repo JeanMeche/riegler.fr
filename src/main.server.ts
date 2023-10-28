@@ -1,13 +1,14 @@
+import 'zone.js/node';
+//
 import {provideContent, withMarkdownRenderer} from '@analogjs/content';
 import {provideFileRouter} from '@analogjs/router';
 import {enableProdMode} from '@angular/core';
 import {renderApplication} from '@angular/platform-server';
 import {withEnabledBlockingInitialNavigation} from '@angular/router';
-import 'zone.js/node';
-import 'prismjs/components/prism-coffeescript';
 
 import {bootstrapApplication} from '@angular/platform-browser';
 import {AppComponent} from './app/app.component';
+import './lib/util/angular';
 
 if (import.meta.env.PROD) {
   enableProdMode();

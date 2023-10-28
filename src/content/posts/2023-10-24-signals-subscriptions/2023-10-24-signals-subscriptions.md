@@ -75,7 +75,7 @@ On the contrary of a computed signal which is only live if it is consumed by ano
 
 A non-live computed signal will not react to producer updates and not mark its consumers as dirty.
 
-The producer-consumer relation between nodes builds a real dependency graph that is driven by active consumers. If there is at least one active child consumer at one end of the graph nodes will compute their values. If not, compute time is spared.
+The producer-consumer relation between nodes builds a real dependency graph that is driven by active consumers. If there is at least one active child consumer at one end of the graph, nodes will compute their values. If not, compute time is spared.
 
 ```mermaid
 flowchart TB
