@@ -1,8 +1,8 @@
-import { ContentFile } from '@analogjs/content';
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ContentMetadata } from '../../../../lib/content-metadata/content-metadata';
+import {ContentFile} from '@analogjs/content';
+import {CommonModule} from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {ContentMetadata} from '../../../../lib/content-metadata/content-metadata';
 
 @Component({
   selector: 'app-blog-preview',
@@ -14,30 +14,22 @@ import { ContentMetadata } from '../../../../lib/content-metadata/content-metada
   template: `
     <article *ngIf="article" class="md:grid md:grid-cols-4 md:items-baseline">
       <div class="md:col-span-3 group relative flex flex-col items-start">
-        <h2
-          class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
-        >
+        <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
           <div
             class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-900/50 sm:-inset-x-6 sm:rounded-2xl"
           ></div>
           <a [routerLink]="'/blog/' + article.slug">
-            <span
-              class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl"
-            ></span>
+            <span class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
             <span class="relative z-10">{{ article.attributes.title }}</span>
           </a>
         </h2>
         <time
           class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
           [attr.datetime]="article.attributes.date | date"
+          *ngIf="showDate"
         >
-          <span
-            class="absolute inset-y-0 left-0 flex items-center"
-            aria-hidden="true"
-          >
-            <span
-              class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"
-            ></span>
+          <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
+            <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
           </span>
           {{ article.attributes.date | date }}
         </time>
@@ -65,6 +57,7 @@ import { ContentMetadata } from '../../../../lib/content-metadata/content-metada
         </div>
       </div>
       <time
+        *ngIf="showDate"
         class="mt-1 md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
         [attr.datetime]="article.attributes.date | date"
       >
@@ -74,6 +67,6 @@ import { ContentMetadata } from '../../../../lib/content-metadata/content-metada
   `,
 })
 export class BlogPreviewComponent {
-  @Input()
-  public article?: ContentFile<ContentMetadata>;
+  @Input() public article?: ContentFile<ContentMetadata>;
+  @Input() showDate = true;
 }

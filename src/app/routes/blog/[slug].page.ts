@@ -1,13 +1,25 @@
-import {DatePipe} from '@angular/common';
-import {Component} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {injectContent, injectContentFiles} from '@analogjs/content';
+import {AsyncPipe, DatePipe, NgFor} from '@angular/common';
+import {Component, inject} from '@angular/core';
+import {ActivatedRoute, RouterLink} from '@angular/router';
+import {map} from 'rxjs';
+import {ContentMetadata} from '../../../lib/content-metadata/content-metadata';
 import AnalogContentDirective from '../../../lib/front-matter/analog-content.directive';
+import {BlogPreviewComponent} from '../../components/blog/blog-preview/blog-preview.component';
 import {TableOfContentsComponent} from '../../components/blog/table-of-content/table-of-contents.component';
 
 @Component({
   selector: 'blog-post',
   standalone: true,
-  imports: [DatePipe, RouterLink, AnalogContentDirective, TableOfContentsComponent],
+  imports: [
+    DatePipe,
+    RouterLink,
+    NgFor,
+    AsyncPipe,
+    AnalogContentDirective,
+    TableOfContentsComponent,
+    BlogPreviewComponent,
+  ],
   template: `
     <article
       *analogContent="let meta = metadata; let content = content; let headings = headings"
@@ -50,6 +62,41 @@ import {TableOfContentsComponent} from '../../components/blog/table-of-content/t
         [innerHTML]="content"
       ></div>
     </article>
+
+    <hr class="mt-24 border-zinc-100 dark:border-zinc-700/40" />
+    <section>
+      <h2 class="mt-4 text-2xl">Suggestions</h2>
+      <div class="flex">
+        <div
+          class="flex-1 mt-12 flex max-w-3xl flex-col space-y-16"
+          *ngFor="let article of previousArticles$ | async"
+        >
+          <app-blog-preview [article]="article" [showDate]="false" />
+        </div>
+      </div>
+    </section>
   `,
 })
-export default class BlogPostComponent {}
+export default class BlogPostComponent {
+  private readonly route = inject(ActivatedRoute);
+  private readonly files = injectContentFiles<ContentMetadata>((contentFile) =>
+    contentFile.filename.includes('/src/content/posts'),
+  );
+
+  readonly previousArticles$ = injectContent<ContentMetadata>({
+    param: 'slug',
+    subdirectory: `posts/${this.route.snapshot.paramMap.get('slug')}`,
+  }).pipe(
+    map((currentArticle) => {
+      return this.files
+        .filter((article) => {
+          return (
+            currentArticle.attributes.title !== article.attributes.title &&
+            new Date() > new Date(article.attributes.date)
+          );
+        })
+        .sort((a1, a2) => (a1.attributes.date > a2.attributes.date ? -1 : 1))
+        .slice(0, 2);
+    }),
+  );
+}
