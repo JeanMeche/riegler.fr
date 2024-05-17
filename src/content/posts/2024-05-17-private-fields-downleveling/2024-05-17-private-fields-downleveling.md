@@ -142,7 +142,7 @@ While Safari supports private properties, there is a known issue with Safari < 1
 
 #### `A class with a static block`
 
-```
+```javascript
 class Foo {
  static { this.foo = undefined }
  #bar = 'bar';

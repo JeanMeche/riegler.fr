@@ -21,7 +21,7 @@ module.exports = {
               },
               code: {
                 color: 'var(--tw-prose-pre-code) !important',
-                backgroundColor: 'var(--tw-prose-pre-bg)',
+                backgroundColor: '#1e1e1e',
                 borderRadius: theme('borderRadius.DEFAULT'),
                 paddingLeft: theme('spacing[1.5]'),
                 paddingRight: theme('spacing[1.5]'),
