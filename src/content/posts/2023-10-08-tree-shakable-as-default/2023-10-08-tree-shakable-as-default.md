@@ -42,7 +42,7 @@ Functionally speaking, this code runs perfectly. It makes perfect sense in the c
 
 In the context of a library this isn't great at all : Unused code should be stripped down at build-time.
 
-## Levaraging `providedIn: 'root'`
+## Leveraging `providedIn: 'root'`
 
 From this point, where do you go to achieve tree-shaking for our service ?
 
