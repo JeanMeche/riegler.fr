@@ -38,7 +38,7 @@ import {TableOfContentsComponent} from '../../components/blog/table-of-content/t
           <p class="text-sm mt-4">
             Matthieu Riegler -
             <time [attr.datetime]="meta.date | date" class="mt-4 text-sm">
-              {{ meta.date | date }}
+              {{ meta.date | date }}  
             </time>
           </p>
         </div>

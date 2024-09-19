@@ -79,6 +79,7 @@ export default class AnalogContentDirective
           metadata: {
             ...attributes,
             date: new Date(attributes['date']),
+            private: attributes['private'] ? !!eval((attributes as any)['private']) : false
           },
           headings: this._contentRenderer
             .getContentHeadings()

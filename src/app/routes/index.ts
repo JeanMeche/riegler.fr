@@ -77,7 +77,7 @@ export default class HomeComponent {
     contentFile.filename.includes('/src/content/posts'),
   )
     .filter((article) => {
-      return new Date() > new Date(article.attributes.date);
+      return new Date() > new Date(article.attributes.date) && !article.attributes.private;
     })
     .sort((a1, a2) => (a1.attributes.date > a2.attributes.date ? -1 : 1))
     .slice(0, 4);
