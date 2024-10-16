@@ -1,10 +1,9 @@
 ---
-title: 'Effects revisited in v19'
-excerpt: 'Root vs View effects.'
-coverImage: 'src/content/posts/2024-09-19-effect-context/vackground-com-ZNkiEWL02mI-unsplash.jpg'
+title: 'Understanding effects'
+excerpt: 'Root vs View effects in v19'
+coverImage: 'src/content/posts/2024-10-15-effect-context/vackground-com-ZNkiEWL02mI-unsplash.jpg'
 coverCredit: 'Photo de <a href="https://unsplash.com/fr/@vackground">vackground.com</a> sur <a href="https://unsplash.com/fr/photos/un-arriere-plan-abstrait-de-couleurs-bleues-vertes-et-jaunes-ZNkiEWL02mI">Unsplash</a>'
 date: '2024-09-19T00:00:00.000+02:00'
-private: 'true'
 ---
 
 Unlike other signals APIs, the `effect` hasn't stabilized yet and is still in developer preview. This has a reason as scheduling and reactivity context need some fine tuning based on developer feedback.
@@ -46,16 +45,14 @@ They are queued in FIFO order: effects that become dirty first will execute firs
 One particular consequence of dirty root effects running until the queue is empty is that you might see effects running kind-of synchronously.
 
 ```ts
-  sig = signal(0);
+sig = signal(0);
 
-  #myRootEffect = effect(
-    () => {
-      if (this.sig() < 5) {
-        console.log(this.sig());
-        this.sig.update((s) => s + 1);
-      }
-    },
-  );
+#myRootEffect = effect(() => {
+  if (this.sig() < 5) {
+    console.log(this.sig());
+    this.sig.update((s) => s + 1);
+  }
+});
 ```
 
 This sample code will log 5 times before running any Change Detection.
@@ -126,7 +123,7 @@ This is what `AfterRenderEffect` is built for and it will execute registered eff
 - `write`
 - - Use this phase to **write** to the DOM. **Never** read from the DOM in this phase.
 - `mixedReadWrite`
-- - Use this phase to read from and write to the DOM simultaneously. **Never** use this phase if  it is possible to divide the work among the other phases instead.
+- - Use this phase to read from and write to the DOM simultaneously. **Never** use this phase if it is possible to divide the work among the other phases instead.
 - `read`
 - - Use this phase to **read** from the DOM. **Never** write to the DOM in this phase.
 
@@ -140,3 +137,72 @@ afterRenderEffect({
   read: () => ...,
 });
 ```
+
+## Error handling & Testing
+
+As both type of effects are run as part of change detection, they report both to the change detection `ErrorHandler`.  
+This means that an error happening inside an effect will thrown at the top, namely on `ApplicationRef.tick()`.
+
+Here is an example that checks for errors during the execution of an effect.
+
+```ts
+it('should throw error...', () => {
+  // create an effect that throws
+  const appRef = TestBed.inject(ApplicationRef);
+  effect(
+    () => {
+      throw new Error('fail!');
+    },
+    {injector: appRef.injector},
+  );
+
+  // explicitly run the CD and check for the thrown exception
+  expect(() => appRef.tick()).toThrowError('fail!');
+});
+```
+
+In the case of more complex error handling, we can resort to listening to the `ErrorHandler` itself.
+
+Because an exception that happen during an effect execution will bubble up to the change detection process, it is important to disable that
+behavior in the tests by setting `rethrowApplicationErrors: false,` (or else `tick()` throws)
+
+Here is our example updated, where the exception is checked via the `ErrorHandler`
+
+```ts
+it('should throw error...', () => {
+  let lastError: any = null;
+  class FakeErrorHandler extends ErrorHandler {
+    override handleError(error: any): void {
+      lastError = error;
+    }
+  }
+
+  TestBed.configureTestingModule({
+    providers: [{provide: ErrorHandler, useFactory: () => new FakeErrorHandler()}],
+    // we make sure to prevent tick() from throwing.
+    rethrowApplicationErrors: false,
+  });
+
+  // create an effect that throws
+  const appRef = TestBed.inject(ApplicationRef);
+  effect(
+    () => {
+      throw new Error('fail!');
+    },
+    {injector: appRef.injector},
+  );
+
+  // explictly run the CD
+  appRef.tick();
+  // check for errors that were reported
+  expect(lastError.message).toBe('fail!');
+});
+```
+
+
+## Last word
+
+As mentionned in the [Angular blog post on `effect`](https://blog.angular.dev/latest-updates-to-effect-in-angular-f2d2648defcd),
+because of the changes around the timing, `effect` will remain in developer preview to gather additional feedback. 
+
+Feel free to [report issues](https://github.com/angular/angular/issues/new) you might encounter with those changes.
