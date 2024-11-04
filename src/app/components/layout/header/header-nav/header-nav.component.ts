@@ -36,6 +36,7 @@ import { HeaderNavLinkComponent } from './header-nav-link/header-nav-link.compon
     <div class="hidden lg:flex lg:gap-10">
       <app-header-nav-link href="/" title="Home"></app-header-nav-link>
       <app-header-nav-link href="/blog" title="Blog"></app-header-nav-link>
+      <app-header-nav-link href="/talks" title="Talks"></app-header-nav-link>
       <app-header-nav-link
         href="/cycling"
         title="Cycling"
