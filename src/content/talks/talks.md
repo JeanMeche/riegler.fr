@@ -40,7 +40,8 @@ ogImage:
     <div class="talk-info">November 6th 2024 - NgPoland - Warsaw, Poland 🇵🇱</div>
 </div>
 <div>
-    Slides to comes
+
+[Slides](https://matthieu.riegler.fr/talks/ngpoland-2024)
 </div>
 
 <div>
