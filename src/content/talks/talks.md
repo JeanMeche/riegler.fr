@@ -32,7 +32,8 @@ ogImage:
     <div class="talk-info">December 6th 2024 - ngBe - Ghent, Belgium 🇧🇪</div>
 </div>
 <div>
-    Slides to comes
+
+[Slides](https://matthieu.riegler.fr/talks/2024/ngbe)
 </div>
 
 <div>
