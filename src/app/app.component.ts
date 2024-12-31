@@ -1,15 +1,14 @@
 import {DOCUMENT, NgClass} from '@angular/common';
 import {Component, OnInit, Renderer2, inject} from '@angular/core';
-import {NavigationEnd, Router, RouterLink, RouterOutlet} from '@angular/router';
+import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {ThemeService} from '../lib/theme/theme.service';
 import {FooterComponent} from './components/layout/footer/footer.component';
 import {HeaderComponent} from './components/layout/header/header.component';
-import {StravaComponent} from './components/strava/strava.component';
 
 @Component({
   selector: 'blog-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, HeaderComponent, FooterComponent, StravaComponent, NgClass],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, NgClass],
   host: {
     class: '',
   },

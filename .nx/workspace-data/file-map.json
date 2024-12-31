@@ -1,0 +1,796 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.3.0",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "my-app": [
+        {
+          "file": ".editorconfig",
+          "hash": "6686520031028425313"
+        },
+        {
+          "file": ".github/workflows/main.yml",
+          "hash": "16566706819537925458"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "8364868806491869021"
+        },
+        {
+          "file": ".markdownlint.jsonc",
+          "hash": "582563558677844493"
+        },
+        {
+          "file": ".nvmrc",
+          "hash": "7856447691536773605"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "7986463076495031603"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "12343942279124280405"
+        },
+        {
+          "file": ".vscode/launch.json",
+          "hash": "371052211946065623"
+        },
+        {
+          "file": ".vscode/tasks.json",
+          "hash": "5336636969995539451"
+        },
+        {
+          "file": "README.md",
+          "hash": "12032493068497837025"
+        },
+        {
+          "file": "deploy.js",
+          "hash": "12860941227467092676",
+          "deps": [
+            "npm:ftp-deploy"
+          ]
+        },
+        {
+          "file": "index.html",
+          "hash": "8451943821251681433"
+        },
+        {
+          "file": "migrations.json",
+          "hash": "18125753011682708362"
+        },
+        {
+          "file": "nx.json",
+          "hash": "6317590000560787720"
+        },
+        {
+          "file": "package.json",
+          "hash": "5612462798151201783",
+          "deps": [
+            "npm:@analogjs/platform",
+            "npm:@analogjs/vite-plugin-angular",
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@angular/build",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@nx/angular",
+            "npm:@nx/vite",
+            "npm:@nx/workspace",
+            "npm:@schematics/angular",
+            "npm:@tailwindcss/typography",
+            "npm:@types/prismjs",
+            "npm:@types/rss",
+            "npm:autoprefixer",
+            "npm:http-server",
+            "npm:jsdom",
+            "npm:nx",
+            "npm:postcss",
+            "npm:tailwindcss",
+            "npm:typescript",
+            "npm:vite",
+            "npm:vitest",
+            "npm:@analogjs/content",
+            "npm:@analogjs/router",
+            "npm:@angular/animations",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser",
+            "npm:@angular/platform-server",
+            "npm:@angular/router",
+            "npm:date-fns",
+            "npm:front-matter",
+            "npm:ftp-deploy",
+            "npm:marked",
+            "npm:marked-gfm-heading-id",
+            "npm:marked-highlight",
+            "npm:mermaid",
+            "npm:prismjs",
+            "npm:rss",
+            "npm:rxjs",
+            "npm:tslib",
+            "npm:vite-plugin-static-copy",
+            "npm:zone.js",
+            "npm:marked-mangle"
+          ]
+        },
+        {
+          "file": "postcss.config.cjs",
+          "hash": "8352417156358845927"
+        },
+        {
+          "file": "project.json",
+          "hash": "9664282853341834439"
+        },
+        {
+          "file": "public/favicon/android-chrome-192x192.png",
+          "hash": "8067069679579234694"
+        },
+        {
+          "file": "public/favicon/android-chrome-512x512.png",
+          "hash": "15780899972798646317"
+        },
+        {
+          "file": "public/favicon/apple-touch-icon.png",
+          "hash": "11669618799668500817"
+        },
+        {
+          "file": "public/favicon/favicon-16x16.png",
+          "hash": "4194890050561003519"
+        },
+        {
+          "file": "public/favicon/favicon-32x32.png",
+          "hash": "15226416557788270543"
+        },
+        {
+          "file": "public/favicon/favicon.ico",
+          "hash": "6620050405964847039"
+        },
+        {
+          "file": "public/manifest.json",
+          "hash": "5101162260909417981"
+        },
+        {
+          "file": "src/app/app.component.spec.ts",
+          "hash": "17758651093930966232",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/app.component.ts",
+          "hash": "7659226650663722995",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/components/blog/blog-preview/blog-preview.component.spec.ts",
+          "hash": "13342185543077804910",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/blog/blog-preview/blog-preview.component.ts",
+          "hash": "11086114274981731703",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/components/blog/featured-blog-preview/featured-blog-preview.component.spec.ts",
+          "hash": "3585559264241733729",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/blog/featured-blog-preview/featured-blog-preview.component.ts",
+          "hash": "10988751837576444438",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/components/blog/table-of-content/table-of-contents.component.scss",
+          "hash": "12545415740906881121"
+        },
+        {
+          "file": "src/app/components/blog/table-of-content/table-of-contents.component.ts",
+          "hash": "2395525347875533883",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/footer/footer.component.spec.ts",
+          "hash": "12953583161322091104",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/footer/footer.component.ts",
+          "hash": "14294497840411909575",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/header/header-nav/header-nav-link/header-nav-link.component.spec.ts",
+          "hash": "3459375136130057789",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/header/header-nav/header-nav-link/header-nav-link.component.ts",
+          "hash": "5772095078464697513",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/header/header-nav/header-nav.component.spec.ts",
+          "hash": "13344744024493184400",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/header/header-nav/header-nav.component.ts",
+          "hash": "17343264132208853758",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/header/header.component.spec.ts",
+          "hash": "635114720034620129",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/header/header.component.ts",
+          "hash": "15656524274542615955",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/page-header/page-header.component.spec.ts",
+          "hash": "6142950993788426620",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/layout/page-header/page-header.component.ts",
+          "hash": "10922664912495862062",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/strava/cycling.component.ts",
+          "hash": "2175605225078265382",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/strava/strava.card.scss",
+          "hash": "10758800576893178313"
+        },
+        {
+          "file": "src/app/components/strava/strava.card.ts",
+          "hash": "8447695853306770665",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/strava/strava.component.ts",
+          "hash": "16896400078942994042",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/components/strava/strava.model.ts",
+          "hash": "11481805060115874125",
+          "deps": [
+            "npm:date-fns"
+          ]
+        },
+        {
+          "file": "src/app/routes/[...page-not-found].md",
+          "hash": "530776406631870581"
+        },
+        {
+          "file": "src/app/routes/blog/(home).page.ts",
+          "hash": "4703031012491691886",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/routes/blog/[slug].page.ts",
+          "hash": "666758433582171714",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/app/routes/cv.page.ts",
+          "hash": "9796769259784640238",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/routes/cycling.page.ts",
+          "hash": "16884076420027812357",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/routes/index.ts",
+          "hash": "5633977573076914306",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/routes/talks.page.ts",
+          "hash": "8753403706720003890",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/routes/test.page.ts",
+          "hash": "17291525827783017729",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/assets/favicon.ico",
+          "hash": "6620050405964847039"
+        },
+        {
+          "file": "src/assets/me.png",
+          "hash": "6109983207074578152"
+        },
+        {
+          "file": "src/content/cycling/cover.jpg",
+          "hash": "9142277450262708485"
+        },
+        {
+          "file": "src/content/cycling/cycling.md",
+          "hash": "11057336357176176321"
+        },
+        {
+          "file": "src/content/posts/2021-02-15-cascade-pisse/2021-02-15-cascade-pisse.md",
+          "hash": "7117923072589165271"
+        },
+        {
+          "file": "src/content/posts/2021-02-15-cascade-pisse/icecubes.jpg",
+          "hash": "1049416782321659264"
+        },
+        {
+          "file": "src/content/posts/2021-02-15-cascade-pisse/map.png",
+          "hash": "9188853583741306095"
+        },
+        {
+          "file": "src/content/posts/2021-02-15-cascade-pisse/upperview.jpg",
+          "hash": "12033956630299312181"
+        },
+        {
+          "file": "src/content/posts/2021-06-05-strava-azure-functions/2021-06-05-strava-azure-functions.md",
+          "hash": "14610767801055462190"
+        },
+        {
+          "file": "src/content/posts/2021-06-05-strava-azure-functions/azure-storage-explorer.png",
+          "hash": "3388125889910604682"
+        },
+        {
+          "file": "src/content/posts/2021-06-05-strava-azure-functions/cover.png",
+          "hash": "16885446295767380375"
+        },
+        {
+          "file": "src/content/posts/2021-06-05-strava-azure-functions/logos.png",
+          "hash": "10379791242856733988"
+        },
+        {
+          "file": "src/content/posts/2022-09-01-ts-tricks/2022-09-01-ts-tricks.md",
+          "hash": "258631222568269750"
+        },
+        {
+          "file": "src/content/posts/2022-09-01-ts-tricks/cover.png",
+          "hash": "17723847166025930114"
+        },
+        {
+          "file": "src/content/posts/2023-07-20-angular-memory-leak/2023-07-20-angular-memory-leak.md",
+          "hash": "10492950228457429549"
+        },
+        {
+          "file": "src/content/posts/2023-07-20-angular-memory-leak/chrome-detached.png",
+          "hash": "13517954383162784704"
+        },
+        {
+          "file": "src/content/posts/2023-07-20-angular-memory-leak/daan-mooij-91LGCVN5SAI-unsplash.jpg",
+          "hash": "16897525411451012814"
+        },
+        {
+          "file": "src/content/posts/2023-07-20-angular-memory-leak/detached-nodes.png",
+          "hash": "13795173854420658107"
+        },
+        {
+          "file": "src/content/posts/2023-07-20-angular-memory-leak/dom-nodes.png",
+          "hash": "10063855903204558103"
+        },
+        {
+          "file": "src/content/posts/2023-07-20-angular-memory-leak/performance-gc.png",
+          "hash": "17346202625114724465"
+        },
+        {
+          "file": "src/content/posts/2023-09-18-cldr-angular/2023-09-18-cldr-angular.md",
+          "hash": "11273571032066594568"
+        },
+        {
+          "file": "src/content/posts/2023-09-18-cldr-angular/kyle-glenn-nXt5HtLmlgE-unsplash.jpg",
+          "hash": "8921400695804630913"
+        },
+        {
+          "file": "src/content/posts/2023-09-20-cd-coalescing/2023-09-20-cd-coalescing.md",
+          "hash": "15875380419359163765"
+        },
+        {
+          "file": "src/content/posts/2023-09-20-cd-coalescing/larry-costales-YFR_x3MqpHc-unsplash.jpg",
+          "hash": "4398600294665088991"
+        },
+        {
+          "file": "src/content/posts/2023-09-20-cd-coalescing/not-great.jpg",
+          "hash": "4630776290985529819"
+        },
+        {
+          "file": "src/content/posts/2023-09-30-lazy-loading-mockable/2023-09-30-lazy-loading-mockable.md",
+          "hash": "16601948074135942192"
+        },
+        {
+          "file": "src/content/posts/2023-09-30-lazy-loading-mockable/injector.jpg",
+          "hash": "7479381763516780692"
+        },
+        {
+          "file": "src/content/posts/2023-10-04-animations-async/2023-10-04-animations-async.md",
+          "hash": "6878263037762373069"
+        },
+        {
+          "file": "src/content/posts/2023-10-04-animations-async/milad-fakurian-PjG_SXDkpwQ-unsplash.jpg",
+          "hash": "4468903592071616148"
+        },
+        {
+          "file": "src/content/posts/2023-10-05-defer-part1/2023-10-05-defer-part1.md",
+          "hash": "11830825708257646207"
+        },
+        {
+          "file": "src/content/posts/2023-10-05-defer-part1/hannah-busing-4J16oO4MmXs-unsplash.jpg",
+          "hash": "7006860060262633860"
+        },
+        {
+          "file": "src/content/posts/2023-10-08-defer-part2/2023-10-08-defer-part2.md",
+          "hash": "2775009305668333858"
+        },
+        {
+          "file": "src/content/posts/2023-10-08-defer-part2/81t40e.jpg",
+          "hash": "767100934824338987"
+        },
+        {
+          "file": "src/content/posts/2023-10-08-defer-part2/shane-aldendorff-mQHEgroKw2k-unsplash.jpg",
+          "hash": "8614166408717536298"
+        },
+        {
+          "file": "src/content/posts/2023-10-08-tree-shakable-as-default/2023-10-08-tree-shakable-as-default.md",
+          "hash": "3396622444960197726"
+        },
+        {
+          "file": "src/content/posts/2023-10-08-tree-shakable-as-default/from-marwool-GbY8Xg5iTOA-unsplash.jpg",
+          "hash": "6372788507041351780"
+        },
+        {
+          "file": "src/content/posts/2023-10-13-v17-builders/2023-10-13-v17-builders.md",
+          "hash": "11468957038591343590"
+        },
+        {
+          "file": "src/content/posts/2023-10-13-v17-builders/farzad-p-xSl33Wxyc-unsplash.jpg",
+          "hash": "18092625739184685087"
+        },
+        {
+          "file": "src/content/posts/2023-10-13-v17-builders/transitions.png",
+          "hash": "14578089858652204444"
+        },
+        {
+          "file": "src/content/posts/2023-10-24-signals-subscriptions/2023-10-24-signals-subscriptions.md",
+          "hash": "16153027752922992379"
+        },
+        {
+          "file": "src/content/posts/2023-10-24-signals-subscriptions/vaclav-FKZZV17Kwhg-unsplash.jpg",
+          "hash": "996434386303557964"
+        },
+        {
+          "file": "src/content/posts/2023-11-02-v17-change-detection/2023-11-02-v17-change-detection.md",
+          "hash": "10578664543773921034"
+        },
+        {
+          "file": "src/content/posts/2023-11-02-v17-change-detection/demo.png",
+          "hash": "6048229026939617119"
+        },
+        {
+          "file": "src/content/posts/2023-11-02-v17-change-detection/tracks.jpg",
+          "hash": "5836182391393875483"
+        },
+        {
+          "file": "src/content/posts/2023-11-03-performance-for-repeaters/16-17.png",
+          "hash": "7187680964868484909"
+        },
+        {
+          "file": "src/content/posts/2023-11-03-performance-for-repeaters/2023-11-03-performance-for-repeaters.md",
+          "hash": "13501415580353992121"
+        },
+        {
+          "file": "src/content/posts/2023-11-03-performance-for-repeaters/david-streit-BumOnw4oEZo-unsplash.jpg",
+          "hash": "924624118072042556"
+        },
+        {
+          "file": "src/content/posts/2023-11-03-performance-for-repeaters/fw-comp.png",
+          "hash": "5630350721524281863"
+        },
+        {
+          "file": "src/content/posts/2024-01-11-zoneless-preview/2024-01-11-zoneless-preview.md",
+          "hash": "15527649215391437975"
+        },
+        {
+          "file": "src/content/posts/2024-01-11-zoneless-preview/zones.jpg",
+          "hash": "18070135389987724279"
+        },
+        {
+          "file": "src/content/posts/2024-04-17-zoneless-with-zoneless-hybrid/2024-04-17-zoneless-with-zoneless-hybrid.md",
+          "hash": "9500764911486641540"
+        },
+        {
+          "file": "src/content/posts/2024-04-17-zoneless-with-zoneless-hybrid/markus-spiske-UhxkK9tTHKs-unsplash.jpg",
+          "hash": "11841852883042873119"
+        },
+        {
+          "file": "src/content/posts/2024-05-01-input-setters-caveats/2024-05-01-input-setters-caveats.md",
+          "hash": "5222926483986919606"
+        },
+        {
+          "file": "src/content/posts/2024-05-01-input-setters-caveats/maxim-berg-kE8-rUKjtQU-unsplash.jpg",
+          "hash": "5126113025607274805"
+        },
+        {
+          "file": "src/content/posts/2024-05-17-private-fields-downleveling/2024-05-17-private-fields-downleveling.md",
+          "hash": "12466465889407979069"
+        },
+        {
+          "file": "src/content/posts/2024-05-17-private-fields-downleveling/andreas-weilguny-3kunGbtUQCE-unsplash.jpg",
+          "hash": "2003296393124434367"
+        },
+        {
+          "file": "src/content/posts/2024-10-15-effect-context/2024-10-15-effect-context.md",
+          "hash": "16627030725214650665"
+        },
+        {
+          "file": "src/content/posts/2024-10-15-effect-context/vackground-com-ZNkiEWL02mI-unsplash.jpg",
+          "hash": "4013571137043237098"
+        },
+        {
+          "file": "src/content/posts/2024-10-18-resources-as-signals/2024-10-18-resources-as-signals.md",
+          "hash": "9430210258001437571"
+        },
+        {
+          "file": "src/content/posts/2024-10-18-resources-as-signals/matthew-ball-36uvcx49pCs-unsplash.jpg",
+          "hash": "7505544949264827729"
+        },
+        {
+          "file": "src/content/talks/cover.jpg",
+          "hash": "10937431461964978097"
+        },
+        {
+          "file": "src/content/talks/talks.md",
+          "hash": "7524387587532436911"
+        },
+        {
+          "file": "src/declaration.d.ts",
+          "hash": "9692053544999731903"
+        },
+        {
+          "file": "src/lib/content-metadata/content-metadata.ts",
+          "hash": "10657627231322432471",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "src/lib/front-matter/analog-content.directive.ts",
+          "hash": "8004167224777906164",
+          "deps": [
+            "npm:@analogjs/content",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/router",
+            "npm:rxjs",
+            [
+              "npm:mermaid",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "src/lib/theme/theme.service.ts",
+          "hash": "17194011706828200330",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/lib/util/angular.js",
+          "hash": "15440308796378771567"
+        },
+        {
+          "file": "src/lib/util/is-empty.ts",
+          "hash": "6205594772102388599"
+        },
+        {
+          "file": "src/main.server.ts",
+          "hash": "12388185330696358201",
+          "deps": [
+            "npm:zone.js",
+            "npm:@analogjs/content",
+            "npm:prismjs",
+            "npm:@analogjs/router",
+            "npm:@angular/core",
+            "npm:@angular/platform-server",
+            "npm:@angular/router",
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "src/main.ts",
+          "hash": "6057989827363205277",
+          "deps": [
+            "npm:zone.js",
+            "npm:@analogjs/content",
+            "npm:@analogjs/router",
+            "npm:@angular/platform-browser",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/server/routes/rss.xml.ts",
+          "hash": "15153355700628709365",
+          "deps": [
+            "npm:front-matter",
+            "npm:h3",
+            "npm:rss"
+          ]
+        },
+        {
+          "file": "src/server/routes/v1/hello.ts",
+          "hash": "6815338784489944959",
+          "deps": [
+            "npm:h3"
+          ]
+        },
+        {
+          "file": "src/styles.css",
+          "hash": "16876486632274062279"
+        },
+        {
+          "file": "src/test.ts",
+          "hash": "11654554698165859908",
+          "deps": [
+            "npm:@analogjs/vite-plugin-angular",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/vite-env.d.ts",
+          "hash": "12946363841406869089"
+        },
+        {
+          "file": "tailwind.config.cjs",
+          "hash": "6189141705766866993",
+          "deps": [
+            "npm:tailwindcss",
+            "npm:@tailwindcss/typography"
+          ]
+        },
+        {
+          "file": "tsconfig.app.json",
+          "hash": "8732749066314816905"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "6994586498619067290"
+        },
+        {
+          "file": "tsconfig.spec.json",
+          "hash": "11815887522729716481"
+        },
+        {
+          "file": "vite-prerender.utils.ts",
+          "hash": "3744091879915524072"
+        },
+        {
+          "file": "vite.config.ts",
+          "hash": "4501717351564101041",
+          "deps": [
+            "npm:@analogjs/platform",
+            "npm:vite",
+            "npm:vite-plugin-static-copy"
+          ]
+        },
+        {
+          "file": "yarn.lock",
+          "hash": "1538745316643238597"
+        }
+      ]
+    }
+  }
+}

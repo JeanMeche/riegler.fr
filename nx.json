@@ -1,19 +1,4 @@
 {
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "serve",
-          "test"
-        ]
-      }
-    }
-  },
-  "affected": {
-    "defaultBase": "main"
-  },
   "namedInputs": {
     "sharedGlobals": [],
     "default": [
@@ -32,13 +17,20 @@
       "inputs": [
         "production",
         "^production"
-      ]
+      ],
+      "cache": true
     },
     "test": {
       "inputs": [
         "default",
         "^production"
-      ]
+      ],
+      "cache": true
+    },
+    "serve": {
+      "cache": true
     }
-  }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "main"
 }

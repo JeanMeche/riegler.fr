@@ -1,7 +1,7 @@
 import {injectContent, injectContentFiles} from '@analogjs/content';
 import {AsyncPipe, DatePipe, NgFor} from '@angular/common';
 import {Component, inject} from '@angular/core';
-import {ActivatedRoute, RouterLink} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {map} from 'rxjs';
 import {ContentMetadata} from '../../../lib/content-metadata/content-metadata';
 import AnalogContentDirective from '../../../lib/front-matter/analog-content.directive';
@@ -13,7 +13,6 @@ import {TableOfContentsComponent} from '../../components/blog/table-of-content/t
   standalone: true,
   imports: [
     DatePipe,
-    RouterLink,
     NgFor,
     AsyncPipe,
     AnalogContentDirective,
@@ -38,7 +37,7 @@ import {TableOfContentsComponent} from '../../components/blog/table-of-content/t
           <p class="text-sm mt-4">
             Matthieu Riegler -
             <time [attr.datetime]="meta.date | date" class="mt-4 text-sm">
-              {{ meta.date | date }}  
+              {{ meta.date | date }}
             </time>
           </p>
         </div>

@@ -1,5 +1,14 @@
 import 'zone.js/node';
-//
+
+import {withPrismHighlighter} from '@analogjs/content/prism-highlighter';
+
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-typescript';
+
 import {provideContent, withMarkdownRenderer} from '@analogjs/content';
 import {provideFileRouter} from '@analogjs/router';
 import {enableProdMode} from '@angular/core';
@@ -17,7 +26,7 @@ if (import.meta.env.PROD) {
 const config = {
   providers: [
     provideFileRouter(withEnabledBlockingInitialNavigation()),
-    provideContent(withMarkdownRenderer()),
+    provideContent(withMarkdownRenderer(), withPrismHighlighter()),
   ],
 };
 

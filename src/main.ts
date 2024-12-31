@@ -1,6 +1,7 @@
 import 'zone.js';
 
 import {provideContent, withMarkdownRenderer} from '@analogjs/content';
+import {withPrismHighlighter} from '@analogjs/content/prism-highlighter';
 import {provideFileRouter} from '@analogjs/router';
 import {bootstrapApplication} from '@angular/platform-browser';
 import {withInMemoryScrolling, withViewTransitions} from '@angular/router';
@@ -17,4 +18,7 @@ bootstrapApplication(AppComponent, {
     ),
     provideContent(withMarkdownRenderer()),
   ],
-}).catch((err) => console.error(err));
+}).catch((err) => {
+  console.error(err);
+  withPrismHighlighter();
+});

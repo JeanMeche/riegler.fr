@@ -7,8 +7,11 @@ import {getBlogPosts} from './vite-prerender.utils';
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
+    root: __dirname,
     publicDir: 'src/assets',
     build: {
+      outDir: 'dist/client',
+      reportCompressedSize: true,
       target: ['es2020'],
     },
     resolve: {

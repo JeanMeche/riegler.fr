@@ -1,5 +1,5 @@
 import {TableOfContentItem} from '@analogjs/content/lib/content-renderer';
-import {NgFor, NgIf} from '@angular/common';
+import {NgFor} from '@angular/common';
 import {Component, Input, inject, signal} from '@angular/core';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {ActivatedRoute, RouterLink} from '@angular/router';
@@ -7,7 +7,7 @@ import {ActivatedRoute, RouterLink} from '@angular/router';
 @Component({
   selector: 'app-blog-toc',
   standalone: true,
-  imports: [RouterLink, NgFor, NgIf],
+  imports: [RouterLink, NgFor],
   template: `
     <aside>
       <nav>

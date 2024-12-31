@@ -1,10 +1,8 @@
-import { DatePipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [DatePipe],
   host: {
     class: 'block',
   },
@@ -14,9 +12,7 @@ import { Component, Input } from '@angular/core';
     >
       <p class="text-sm">Sharing is caring 💙</p>
 
-      <div
-        class="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2"
-      >
+      <div class="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
         <span
           class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto"
         >
@@ -34,9 +30,7 @@ import { Component, Input } from '@angular/core';
               class="w-10 h-10"
               viewBox="0 0 24 24"
             >
-              <path
-                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-              ></path>
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
             </svg>
           </a>
           <a
@@ -74,9 +68,7 @@ import { Component, Input } from '@angular/core';
               viewBox="0 0 24 24"
             >
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path
-                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-              ></path>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
             </svg>
           </a>
           <a

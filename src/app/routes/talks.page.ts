@@ -1,6 +1,6 @@
-import { injectContent, MarkdownComponent } from '@analogjs/content';
-import { AsyncPipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import {injectContent, MarkdownComponent} from '@analogjs/content';
+import {AsyncPipe, NgIf} from '@angular/common';
+import {Component} from '@angular/core';
 
 export interface PostAttributes {
   title: string;
@@ -16,10 +16,7 @@ export interface PostAttributes {
   template: `
     <article *ngIf="post$ | async as post" class="z-10">
       <header class="w-full h-[320px] right-0 top-0 flex justify-end relative">
-        <img
-          class="h-full right-0 top-0 rounded-lg"
-          [src]="post.attributes.coverImage"
-        />
+        <img class="h-full right-0 top-0 rounded-lg" [src]="post.attributes.coverImage" />
         <div
           class="w-[60%] h-full left-0 top-0 absolute bg-gradient-to-r dark:from-zinc-800 from-white from-70% pr-[20%] flex flex-col justify-center"
         >
@@ -32,7 +29,7 @@ export interface PostAttributes {
     </article>
   `,
 })
-export default class ProjectComponent {
+export default class TalksComponent {
   readonly post$ = injectContent<PostAttributes>({
     customFilename: 'talks/talks',
   });

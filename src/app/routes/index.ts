@@ -1,7 +1,7 @@
 import {injectContentFiles} from '@analogjs/content';
-import {AsyncPipe, NgForOf} from '@angular/common';
+import {NgForOf} from '@angular/common';
 import {Component} from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {RouterLink} from '@angular/router';
 import {ContentMetadata} from '../../lib/content-metadata/content-metadata';
 import {FeaturedBlogPreviewComponent} from '../components/blog/featured-blog-preview/featured-blog-preview.component';
 import {PageHeaderComponent} from '../components/layout/page-header/page-header.component';
@@ -11,10 +11,8 @@ import {StravaComponent} from '../components/strava/strava.component';
   selector: 'home',
   standalone: true,
   imports: [
-    RouterOutlet,
     RouterLink,
     FeaturedBlogPreviewComponent,
-    AsyncPipe,
     NgForOf,
     PageHeaderComponent,
     StravaComponent,

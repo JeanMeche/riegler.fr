@@ -67,7 +67,7 @@ export default class AnalogContentDirective
 
   updateContent() {
     this.post$.pipe(take(1)).subscribe(({content, attributes}) => {
-      if (!attributes || !content) {
+      if (!attributes || !content || typeof content !== 'string') {
         return;
       }
       this._contentRenderer.render(content).then((body) => {
@@ -79,7 +79,7 @@ export default class AnalogContentDirective
           metadata: {
             ...attributes,
             date: new Date(attributes['date']),
-            private: attributes['private'] ? !!eval((attributes as any)['private']) : false
+            private: attributes['private'] ? !!eval((attributes as any)['private']) : false,
           },
           headings: this._contentRenderer
             .getContentHeadings()
