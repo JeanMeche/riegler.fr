@@ -13,15 +13,16 @@ ogImage:
 
 <div class="talk-links">
 <div>
-    Topic TBA
+    Lifecycle-Hook-Free Angular: Building Components with Modern APIs
     <div class="talk-info">December 14sth 2024 - ngGlühwein - Vienna, Austria 🇦🇹</div>
 </div>
 <div>
-    Slides to comes
+
+[Slides](https://matthieu.riegler.fr/talks/2024/austria)
 </div>
 
 <div>
-    Topic TBA
+    Lifecycle-Hook-Free Angular: Building Components with Modern APIs
     <div class="talk-info">December 12th 2024 - ngGraz - Graz, Austria 🇦🇹</div>
 </div>
 <div>
