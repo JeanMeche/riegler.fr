@@ -37,10 +37,9 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-.nx/*
+.nx/
 
 # System files
 .DS_Store
 Thumbs.db
 
-.nx/cache
