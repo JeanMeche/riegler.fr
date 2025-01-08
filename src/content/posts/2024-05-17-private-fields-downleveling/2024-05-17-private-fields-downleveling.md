@@ -81,6 +81,8 @@ As you can see, downleveling the private properties is responsible for introduci
 
 ## Angular, Build target and browser support
 
+> Edit Jan 2024: The following paragraph applies until v18. 
+
 Starting with Angular 15, the Angular CLI forces the typescript target to `ES2022`. This means the typescript compiler (`tsc`) output does not downlevel private properties.
 
 So why are private fields still not recommended ?
@@ -219,3 +221,7 @@ NG_BUILD_MANGLE=0 ng build
 ```
 
 This way you'll be able to keep all you variable & class names while still enabling optimizations like tree shaking and dead-code elimination (DCE).
+
+## Since v19
+
+Since v19, or more precisly since browserlist updated the definitions of "last 2 iOS major versions" to exclude v16, this happened around mid-septembre with the release iOS 18, the default configuration of the Angular CLI doesn't not downlevel private properties anymore. If you rely on that default configuration you can safely use private properties and enjoy the smal performance improvements it brings in !
