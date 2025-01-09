@@ -363,6 +363,15 @@ pre[class*='language-'] > code[class*='language-'] {
     margin: auto;
   }
 
+  p > a {
+    &:has(img) {
+      margin: auto;
+    }
+    &>img {
+      margin: auto;
+    }
+  }
+
   pre {
     margin-top: 0;
   }
