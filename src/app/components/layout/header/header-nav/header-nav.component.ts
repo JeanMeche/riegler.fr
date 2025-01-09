@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HeaderNavLinkComponent } from './header-nav-link/header-nav-link.component';
@@ -6,7 +6,7 @@ import { HeaderNavLinkComponent } from './header-nav-link/header-nav-link.compon
 @Component({
   selector: 'app-header-nav',
   standalone: true,
-  imports: [CommonModule, RouterLink, HeaderNavLinkComponent],
+  imports: [RouterLink, HeaderNavLinkComponent],
   host: {
     class: 'relative z-10 flex items-center gap-16',
   },
