@@ -18,7 +18,7 @@ import { StravaDetail } from './strava.model';
           class="latestRun hasPhoto rounded-lg"
           style.backgroundImage="linear-gradient(rgba(0, 0, 0, 0.25), transparent 25%, transparent 60%, rgba(0, 0, 0, 0.5)), url('{{
             sportDetail.photoUrl
-          }}'"
+          }}')"
           >
           <div class="text-white">
             {{ sportDetail.activityName }}
