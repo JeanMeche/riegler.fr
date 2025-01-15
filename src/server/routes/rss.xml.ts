@@ -4,7 +4,7 @@ import {defineEventHandler} from 'h3';
 import * as path from 'path';
 import RSS from 'rss';
 import {ContentMetadata} from 'src/lib/content-metadata/content-metadata';
-const posts = fs.readdirSync('./src/content/posts').filter((file) => file.endsWith('.md'));
+const posts = fs.readdirSync('./src/content/posts');
 
 async function generateRssFeed() {
   const site_url = 'https://riegler.fr';
