@@ -16,9 +16,13 @@ bootstrapApplication(AppComponent, {
       withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'}),
       withViewTransitions(),
     ),
-    provideContent(withMarkdownRenderer()),
+    provideContent(
+      withMarkdownRenderer({
+        loadMermaid: () => import('mermaid'),
+      }),
+      withPrismHighlighter(),
+    ),
   ],
 }).catch((err) => {
   console.error(err);
-  withPrismHighlighter();
 });

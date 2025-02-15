@@ -26,7 +26,12 @@ if (import.meta.env.PROD) {
 const config = {
   providers: [
     provideFileRouter(withEnabledBlockingInitialNavigation()),
-    provideContent(withMarkdownRenderer(), withPrismHighlighter()),
+    provideContent(
+      withMarkdownRenderer({
+        loadMermaid: () => import('mermaid'),
+      }),
+      withPrismHighlighter(),
+    ),
   ],
 };
 
