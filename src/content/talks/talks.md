@@ -9,6 +9,19 @@ ogImage:
 
 ## Latest Talks
 
+### 2025
+
+<div class="talk-links">
+<div>
+    Building Reactivity
+    <div class="talk-info">March 14th 2025 - ngVenice 🇮🇹</div>
+</div>
+<div>
+
+[Slides](https://matthieu.riegler.fr/talks/2025/venice)
+</div>
+</div>
+
 ### 2024
 
 <div class="talk-links">
