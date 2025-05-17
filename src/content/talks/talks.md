@@ -1,11 +1,10 @@
 ---
-title: "Talks"
-excerpt: ""
-coverImage: "src/content/talks/cover.jpg"
+title: 'Talks'
+excerpt: ''
+coverImage: 'src/content/talks/cover.jpg'
 ogImage:
-  url: "src/content/talks/cover.jpg"
+  url: 'src/content/talks/cover.jpg'
 ---
-
 
 ## Latest Talks
 
@@ -19,7 +18,27 @@ ogImage:
 <div>
 
 [Slides](https://matthieu.riegler.fr/talks/2025/venice)
+
 </div>
+
+<div>
+    Building Angular
+    <div class="talk-info">May 24th 2025 - NG Baguette 🇫🇷</div>
+</div>
+<div></div>
+
+<div>
+    TBD
+    <div class="talk-info">September 13th 2025 - Angular Connect 🇬🇧</div>
+</div>
+<div></div>
+
+<div>
+    TBD
+    <div class="talk-info">November 12th 2025 - NG TLV 🇮🇱</div>
+</div>
+<div></div>
+
 </div>
 
 ### 2024
@@ -32,6 +51,7 @@ ogImage:
 <div>
 
 [Slides](https://matthieu.riegler.fr/talks/2024/austria)
+
 </div>
 
 <div>
@@ -41,6 +61,7 @@ ogImage:
 <div>
 
 [Slides](https://matthieu.riegler.fr/talks/2024/austria)
+
 </div>
 <div>
     PullBased apps with Signals
@@ -49,6 +70,7 @@ ogImage:
 <div>
 
 [Slides](https://matthieu.riegler.fr/talks/2024/ngbe)
+
 </div>
 
 <div>
@@ -58,6 +80,7 @@ ogImage:
 <div>
 
 [Slides](https://matthieu.riegler.fr/talks/ngpoland-2024)
+
 </div>
 
 <div>
@@ -67,6 +90,7 @@ ogImage:
 <div>
 
 [Slides](https://docs.google.com/presentation/d/1TrDL6iGVaPYT5MyUAEGpDKahEf1wf8djVJnR7oWqUFI/edit?usp=sharing)
+
 </div>
 
 <div>
@@ -76,6 +100,7 @@ ogImage:
 <div>
 
 [Slides](https://docs.google.com/presentation/d/1UZ4hLSiTOu81o7eWyYe4iCLDCZtrzVfHh5kYx_4f36k/edit?usp=sharing)
+
 </div>
 
 <div>
@@ -84,7 +109,8 @@ ogImage:
 </div>
 <div>
 
- [Slides](https://docs.google.com/presentation/d/17GJYHyHFgw44I1MefqpAQ-7qaRZvBSs1cY_Wjm_sin8/edit?usp=sharing&resourcekey=0-ZH-87a0a7cb4Qm55ZtS3dQ)
+[Slides](https://docs.google.com/presentation/d/17GJYHyHFgw44I1MefqpAQ-7qaRZvBSs1cY_Wjm_sin8/edit?usp=sharing&resourcekey=0-ZH-87a0a7cb4Qm55ZtS3dQ)
+
 </div>
 
 <div>
@@ -93,7 +119,8 @@ ogImage:
 </div>
 <div>
 
- [Slides](https://docs.google.com/presentation/d/1gxdA1vpSw2MQfG1n3DqlR6qMwRtl8oUBcUzkOxWJasY/edit?usp=sharing)-[Watch](https://www.youtube.com/watch?v=qyBMHKjGh_Q&pp=ygUQbWF0dGhpZXUgcmllZ2xlcg%3D%3D)
+[Slides](https://docs.google.com/presentation/d/1gxdA1vpSw2MQfG1n3DqlR6qMwRtl8oUBcUzkOxWJasY/edit?usp=sharing)-[Watch](https://www.youtube.com/watch?v=qyBMHKjGh_Q&pp=ygUQbWF0dGhpZXUgcmllZ2xlcg%3D%3D)
+
 </div>
 
 </div>
@@ -116,6 +143,10 @@ ogImage:
     grid-template-columns: 1fr max-content;
     gap: 1rem;
 
+    div:nth-child(1n) {
+        padding: 4px 0 4px 8px;
+    }
+
     div:nth-child(2n) {
         text-align: right;
     }
@@ -123,6 +154,11 @@ ogImage:
 
 .talk-info {
     font-size: 0.8em;
+}
+
+.talk-links > div:hover {
+    background: #333333;
+    border-radius: 8px;
 }
 
 </style>
