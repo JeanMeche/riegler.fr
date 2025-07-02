@@ -23,9 +23,23 @@ ogImage:
 
 <div>
     Building Angular
-    <div class="talk-info">May 24th 2025 - NG Baguette 🇫🇷</div>
+    <div class="talk-info">May 24th 2025 - NG Baguette, Nantes 🇫🇷</div>
 </div>
-<div></div>
+<div>
+
+[Slides](https://matthieu.riegler.fr/talks/2025/baguette)
+
+</div>
+
+<div>
+    Modern Angular - Authoring & others
+    <div class="talk-info">July 2nd 2025 - SwissAngular Meetup, Zurich 🇨🇭</div>
+</div>
+<div>
+
+[Slides](https://matthieu.riegler.fr/talks/2025/zurich)
+
+</div>
 
 <div>
     TBD
