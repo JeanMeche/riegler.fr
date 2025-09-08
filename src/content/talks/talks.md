@@ -42,6 +42,14 @@ ogImage:
 </div>
 
 <div>
+    Building Angular in the Age of AI 
+    <div class="talk-info">September 5th 2025 - Angular Graz Meetup 🇦🇹</div>
+</div>
+
+[Slides](https://matthieu.riegler.fr/talks/2025/graz)
+
+
+<div>
     TBD
     <div class="talk-info">September 13th 2025 - Angular Connect 🇬🇧</div>
 </div>
