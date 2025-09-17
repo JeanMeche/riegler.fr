@@ -38,28 +38,42 @@ ogImage:
 <div>
 
 [Slides](https://matthieu.riegler.fr/talks/2025/zurich)
-
 </div>
 
 <div>
-    Building Angular in the Age of AI 
+    Growing Angular in the Age of AI 
     <div class="talk-info">September 5th 2025 - Angular Graz Meetup 🇦🇹</div>
 </div>
+<div> 
 
 [Slides](https://matthieu.riegler.fr/talks/2025/graz)
-
+</div>
 
 <div>
-    TBD
-    <div class="talk-info">September 13th 2025 - Angular Connect 🇬🇧</div>
+    Build Angular - The perks of working in a Monorepo
+    <div class="talk-info">September 13th 2025 - Angular Connect, London 🇬🇧</div>
 </div>
-<div></div>
+<div>
+
+[Slides](https://matthieu.riegler.fr/talks/2025/connect)
+</div>
 
 <div>
-    TBD
-    <div class="talk-info">November 12th 2025 - NG TLV 🇮🇱</div>
+    Forget that you hated writing forms with Signal Forms
+    <div class="talk-info">November 6th 2025 - NG-DE, Berlin 🇩🇪</div>
 </div>
-<div></div>
+<div>
+
+[Slides](https://matthieu.riegler.fr/talks/2025/ng-de)
+</div>
+
+<div>
+    Build Angular - The perks of working in a Monorepo
+    <div class="talk-info">November 12th 2025 - NG TLV, Tel Aviv 🇮🇱</div>
+</div>
+<div>
+
+</div>
 
 </div>
 
@@ -171,6 +185,7 @@ ogImage:
 
     div:nth-child(2n) {
         text-align: right;
+        padding: 4px 8px;
     }
 }
 

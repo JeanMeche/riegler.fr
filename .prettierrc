@@ -1,5 +1,5 @@
 {
-  "printWidth": 100,
+  "printWidth": 120,
   "tabWidth": 2,
   "tabs": false,
   "singleQuote": true,
@@ -7,5 +7,6 @@
   "trailingComma": "all",
   "quoteProps": "preserve",
   "bracketSpacing": false,
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "proseWrap": "always"
 }
